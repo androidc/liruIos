@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  LiruIos
 //
-//  Created by Артем Солохин on 26.01.2022.
+//  Created  on 26.01.2022.
 //
 
 import UIKit

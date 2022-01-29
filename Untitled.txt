@@ -1,0 +1,50 @@
+git init
+git clone <.git>
+git config --global user.name "Artem S" && git config --global user.email "chizztectep@gmail.com"
+git branch - текущая ветка
+git switch <ветка> - переключение на другую ветку
+git add <файл>
+git commit  -m 'description of commit'
+git push master
+git status - показывает немодифицированные файлы
+git push origin master
+git branch <название ветки> - создание ветки
+git checkout <имя файла> - откат изменений в файле
+git reset --hard HEAD - откатить все
+git stash
+git stash apply - применить stash
+git stash pop - убрать из стэша
+git revert - отменить последний commit
+git log
+git revert HEAD
+:wq - write quit
+git diff > current.patch
+cat current.patch
+git merge <branch>
+.gitignore 
+foo.txt
+*.html
+Pods/*
+vi .gitignore
+
+While in command mode (case sensitive)
+move the cursor with arrow keys; if there aren't any arrow keys, use j,k,h,l
+i - change to insert mode (before cursor)
+a - change to insert mode (after cursor)
+A - change to insert mode (at end of line)
+r - replace one character
+R - overwrite text
+x - delete one character
+dd - delete one line
+yy - yank line (copy)
+p - paste deleted or yanked text after cursor
+P - paste deleted or yanked text before cursor
+G - go to end of the file
+1G - go to top of the file
+J - merge next line with this one
+/ - search, follow / with text to find
+:wq - write file and quit
+:q! - quit without saving
+%s/old/new/g - substitute; replace "old" with "new" on all lines
+:g/pattern/d - delete all lines that match the pattern
+

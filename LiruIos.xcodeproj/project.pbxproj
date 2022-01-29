@@ -13,6 +13,9 @@
 		1B0CAFB127A19538007CF2FD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B0CAFAF27A19538007CF2FD /* Main.storyboard */; };
 		1B0CAFB327A1953D007CF2FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0CAFB227A1953D007CF2FD /* Assets.xcassets */; };
 		1B0CAFB627A1953D007CF2FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B0CAFB427A1953D007CF2FD /* LaunchScreen.storyboard */; };
+		1B0CAFBE27A30394007CF2FD /* SendPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0CAFBD27A30394007CF2FD /* SendPostViewController.swift */; };
+		1BFEC9BB27A5B896005C2FF5 /* URLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEC9BA27A5B896005C2FF5 /* URLQuery.swift */; };
+		21F9B4B05F2F11099F96BCB5 /* Pods_LiruIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A928515DB829D5100F7BE1 /* Pods_LiruIos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,11 @@
 		1B0CAFB227A1953D007CF2FD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B0CAFB527A1953D007CF2FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B0CAFB727A1953D007CF2FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B0CAFBD27A30394007CF2FD /* SendPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPostViewController.swift; sourceTree = "<group>"; };
+		1BFEC9BA27A5B896005C2FF5 /* URLQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQuery.swift; sourceTree = "<group>"; };
+		5FED4D443EA5290655ACF078 /* Pods-LiruIos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiruIos.debug.xcconfig"; path = "Target Support Files/Pods-LiruIos/Pods-LiruIos.debug.xcconfig"; sourceTree = "<group>"; };
+		E281FD087C203EBE2C7DD10B /* Pods-LiruIos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiruIos.release.xcconfig"; path = "Target Support Files/Pods-LiruIos/Pods-LiruIos.release.xcconfig"; sourceTree = "<group>"; };
+		F4A928515DB829D5100F7BE1 /* Pods_LiruIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiruIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21F9B4B05F2F11099F96BCB5 /* Pods_LiruIos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +51,8 @@
 			children = (
 				1B0CAFA827A19538007CF2FD /* LiruIos */,
 				1B0CAFA727A19538007CF2FD /* Products */,
+				7A8AE7ABED97B262D0400F2C /* Pods */,
+				50167A1C515AF086909B374E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +74,27 @@
 				1B0CAFB227A1953D007CF2FD /* Assets.xcassets */,
 				1B0CAFB427A1953D007CF2FD /* LaunchScreen.storyboard */,
 				1B0CAFB727A1953D007CF2FD /* Info.plist */,
+				1B0CAFBD27A30394007CF2FD /* SendPostViewController.swift */,
+				1BFEC9BA27A5B896005C2FF5 /* URLQuery.swift */,
 			);
 			path = LiruIos;
+			sourceTree = "<group>";
+		};
+		50167A1C515AF086909B374E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4A928515DB829D5100F7BE1 /* Pods_LiruIos.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A8AE7ABED97B262D0400F2C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5FED4D443EA5290655ACF078 /* Pods-LiruIos.debug.xcconfig */,
+				E281FD087C203EBE2C7DD10B /* Pods-LiruIos.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +104,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B0CAFBA27A1953D007CF2FD /* Build configuration list for PBXNativeTarget "LiruIos" */;
 			buildPhases = (
+				2E20022AE941B56C508F20C1 /* [CP] Check Pods Manifest.lock */,
 				1B0CAFA227A19538007CF2FD /* Sources */,
 				1B0CAFA327A19538007CF2FD /* Frameworks */,
 				1B0CAFA427A19538007CF2FD /* Resources */,
+				E5C690A5700ED628E73E4F86 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -133,6 +165,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2E20022AE941B56C508F20C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LiruIos-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5C690A5700ED628E73E4F86 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LiruIos/Pods-LiruIos-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LiruIos/Pods-LiruIos-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LiruIos/Pods-LiruIos-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1B0CAFA227A19538007CF2FD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -140,7 +214,9 @@
 			files = (
 				1B0CAFAE27A19538007CF2FD /* ViewController.swift in Sources */,
 				1B0CAFAA27A19538007CF2FD /* AppDelegate.swift in Sources */,
+				1B0CAFBE27A30394007CF2FD /* SendPostViewController.swift in Sources */,
 				1B0CAFAC27A19538007CF2FD /* SceneDelegate.swift in Sources */,
+				1BFEC9BB27A5B896005C2FF5 /* URLQuery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +360,7 @@
 		};
 		1B0CAFBB27A1953D007CF2FD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5FED4D443EA5290655ACF078 /* Pods-LiruIos.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,6 +388,7 @@
 		};
 		1B0CAFBC27A1953D007CF2FD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E281FD087C203EBE2C7DD10B /* Pods-LiruIos.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
