@@ -11,7 +11,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Login" id="BYZ-38-t0r" customClass="ViewController" customModule="LiruIos" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="lgvc" title="Login" id="BYZ-38-t0r" customClass="ViewController" customModule="LiruIos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -55,6 +55,9 @@
                             <constraint firstItem="glX-p7-ExC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="xkk-RL-caQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="PassField" destination="glX-p7-ExC" id="HWd-H9-WEk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,6 +95,9 @@
                                 <rect key="frame" x="100" y="472" width="214" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Сменить пользователя"/>
+                                <connections>
+                                    <action selector="ChangeUserButton:" destination="3v7-w3-y4B" eventType="touchUpInside" id="M2z-cV-w97"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EdM-FO-qCZ"/>
