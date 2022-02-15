@@ -12,13 +12,94 @@ class ViewController: UIViewController {
     
     private var userName:String = ""
     private var pass:String = ""
-
+    var changeUserFlag:Bool = false
+    
+    private var ud_userName:String? = nil
+    private var ud_pass:String? = nil
+    private var ud_bbuserid:String? = nil
+    private var ud_bbusername:String? = nil
+    private var ud_bbpassword:String? = nil
+    private var ud_jurl:String? = nil
+    
+   // var userNameObserver: NSKeyValueObservation?
+   // var userPassObserver: NSKeyValueObservation?
+    
+    
+    private func ud_init() -> (Bool) {
+        
+        ud_userName = UserDefaults.standard.string(forKey: Keys.userName)
+       
+        ud_pass = UserDefaults.standard.string(forKey: Keys.userPass)
+        ud_bbuserid = UserDefaults.standard.string(forKey: Keys.bbuserid)
+        ud_bbpassword = UserDefaults.standard.string(forKey: Keys.bbuserpassword)
+        ud_bbusername = UserDefaults.standard.string(forKey: Keys.bbusername)
+        ud_jurl = UserDefaults.standard.string(forKey: Keys.jurl)
+        
+        if ud_bbpassword != nil {return true}
+            else
+            {return false}
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+//        // с использованием Observer
+//        userPassObserver = UserDefaults.standard.observe(\.userPass,options: [.initial,.new], changeHandler: {
+//            [weak self] (defaults, change) in
+//            self?.ud_userName = change.newValue
+//
+//        })
+        
+        // читаем данные пользователя из UserDefaults в любом случае
+        if ud_init() == true {
+            if changeUserFlag == true {
+                //вставляем данные пользователя в UI и не переходим на следующий экран
+                LoginField.text = ud_userName!
+                PassField.text = ud_pass!
+                
+                userName = ud_userName!
+                pass = ud_pass!
+                
+                
+            } else {
+                
+                // инициализация из userDefaults
+                if ud_init() == true {
+                    //print("пользак уже есть")
+                    
+                    let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                    let nextViewController = storyBoard.instantiateViewController(withIdentifier: "spvc") as! SendPostViewController
+                    nextViewController.modalPresentationStyle = .fullScreen
+                    
+                    nextViewController.bbusername = ud_bbusername!
+                    nextViewController.jurl = ud_jurl!
+                    nextViewController.bbuserid = ud_bbuserid!
+                    nextViewController.bbpassword = ud_bbpassword!
+                    nextViewController.username = ud_userName!
+                    
+                    self.present(nextViewController, animated:true, completion:nil)
+                
+            }
+        }
+        
+   
+        }
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
+        
+    
     }
     
+    @IBOutlet weak var LoginField: UITextField!
     @IBOutlet weak var PassField: UITextField!
+    
     @IBAction func onPassChanged(_ sender: UITextField) {
         pass = sender.text!
     }
@@ -37,8 +118,8 @@ class ViewController: UIViewController {
             method: .post,
             parameters: parameters
         ).response { [weak self] response in
-            print(response.debugDescription)
-            print(HTTPCookieStorage.shared.cookies!)
+           // print(response.debugDescription)
+         //   print(HTTPCookieStorage.shared.cookies!)
            
          
             if response.debugDescription.contains("https://www.liveinternet.ru/member.php?rndm=") {
@@ -54,21 +135,37 @@ class ViewController: UIViewController {
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "spvc") as! SendPostViewController
                 nextViewController.modalPresentationStyle = .fullScreen
                 
+                UserDefaults.standard.set(self?.userName,forKey: Keys.userName)
+                UserDefaults.standard.set(self?.pass,forKey: Keys.userPass)
+                nextViewController.username = self?.userName ?? "unnamed"
+                
+                
+                
+                
+                
                 for cookie in HTTPCookieStorage.shared.cookies! {
                    // print(cookie.name)
                     //print(cookie.value)
                     
                     if cookie.name == "bbusername" {
                         nextViewController.bbusername = cookie.value
+                        UserDefaults.standard.set(cookie.value,forKey: Keys.bbusername)
+                        
                     }
                     if cookie.name == "bbuserid" {
                         nextViewController.bbuserid = cookie.value
+                        UserDefaults.standard.set(cookie.value,forKey: Keys.bbuserid)
+                        
                     }
                     if cookie.name == "jurl" {
                         nextViewController.jurl = cookie.value
+                        UserDefaults.standard.set(cookie.value,forKey: Keys.jurl)
+                        
                     }
                     if cookie.name == "bbpassword" {
                         nextViewController.bbpassword = cookie.value
+                        UserDefaults.standard.set(cookie.value,forKey: Keys.bbuserpassword)
+                        
                     }
                 }
                 self?.present(nextViewController, animated:true, completion:nil)
@@ -91,7 +188,6 @@ class ViewController: UIViewController {
             "username": userName
          
         ]
-        
         let bodyString = bodyParameters.queryParameters
         request.httpBody = bodyString.data(using: .win1251, allowLossyConversion: true)
         
@@ -104,8 +200,10 @@ class ViewController: UIViewController {
                 print("URL Session Task Succeeded: HTTP \(statusCode)")
                
                 
-                print(HTTPCookieStorage.shared.cookies!)
+                //print(HTTPCookieStorage.shared.cookies!)
                 if (!response.debugDescription.contains("error_register")) {
+                    UserDefaults.standard.set(self.userName,forKey: Keys.userName)
+                    UserDefaults.standard.set(self.pass,forKey: Keys.userPass)
                     completion("OK")
                 }
                 else
@@ -118,10 +216,7 @@ class ViewController: UIViewController {
               }}
             })
         task.resume()
-        
-
-        
-        
+    
     }
     
   
@@ -158,6 +253,7 @@ class ViewController: UIViewController {
                 let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                 let nextViewController = storyBoard.instantiateViewController(withIdentifier: "spvc") as! SendPostViewController
                 nextViewController.modalPresentationStyle = .fullScreen
+                    nextViewController.username = self.userName
                     
                     for cookie in HTTPCookieStorage.shared.cookies! {
                        // print(cookie.name)
@@ -165,22 +261,27 @@ class ViewController: UIViewController {
                         
                         if cookie.name == "bbusername" {
                             nextViewController.bbusername = cookie.value
+                            UserDefaults.standard.set(cookie.value,forKey: Keys.bbusername)
                         }
                         if cookie.name == "bbuserid" {
                             nextViewController.bbuserid = cookie.value
+                            UserDefaults.standard.set(cookie.value,forKey: Keys.bbuserid)
                         }
                         if cookie.name == "jurl" {
                             nextViewController.jurl = cookie.value
+                            UserDefaults.standard.set(cookie.value,forKey: Keys.jurl)
+                            
                         }
                         if cookie.name == "bbpassword" {
                             nextViewController.bbpassword = cookie.value
+                            UserDefaults.standard.set(cookie.value,forKey: Keys.bbuserpassword)
                         }
                     }
                
                     self.present(nextViewController, animated:true, completion:nil)}
                 else{
                     // показать алерт
-                    let alert = self.createAlert() ?? UIAlertController()
+                    let alert = self.createAlert()
                     self.present(alert, animated: true, completion: nil)
                 }
             })
@@ -196,6 +297,15 @@ class ViewController: UIViewController {
 extension String {
     var latinCharactersOnly: Bool {
         return self.range(of: "\\P{Latin}", options: .regularExpression) == nil
+    }
+}
+
+extension UserDefaults {
+    @objc dynamic var userName: String {
+        return string(forKey: Keys.userName) ?? ""
+    }
+    @objc dynamic var userPass: String {
+        return string(forKey: Keys.userPass) ?? ""
     }
 }
 

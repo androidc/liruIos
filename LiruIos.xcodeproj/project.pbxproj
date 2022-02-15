@@ -14,7 +14,14 @@
 		1B0CAFB327A1953D007CF2FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0CAFB227A1953D007CF2FD /* Assets.xcassets */; };
 		1B0CAFB627A1953D007CF2FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B0CAFB427A1953D007CF2FD /* LaunchScreen.storyboard */; };
 		1B0CAFBE27A30394007CF2FD /* SendPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0CAFBD27A30394007CF2FD /* SendPostViewController.swift */; };
+		1BBAD75627BA75840058DF7D /* FriendsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD75527BA75840058DF7D /* FriendsListController.swift */; };
+		1BBAD75827BA931C0058DF7D /* FriendsXMLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD75727BA931C0058DF7D /* FriendsXMLModel.swift */; };
+		1BBAD75B27BC07880058DF7D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD75927BC07880058DF7D /* Model.xcdatamodeld */; };
+		1BBAD75E27BC07C60058DF7D /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD75C27BC07C60058DF7D /* Friend+CoreDataProperties.swift */; };
+		1BBAD75F27BC07C60058DF7D /* Friend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD75D27BC07C60058DF7D /* Friend+CoreDataClass.swift */; };
 		1BFEC9BB27A5B896005C2FF5 /* URLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEC9BA27A5B896005C2FF5 /* URLQuery.swift */; };
+		1BFEC9BD27A6D28A005C2FF5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEC9BC27A6D28A005C2FF5 /* PostViewController.swift */; };
+		1BFEC9BF27B17E43005C2FF5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEC9BE27B17E42005C2FF5 /* Constants.swift */; };
 		21F9B4B05F2F11099F96BCB5 /* Pods_LiruIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A928515DB829D5100F7BE1 /* Pods_LiruIos.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +35,14 @@
 		1B0CAFB527A1953D007CF2FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B0CAFB727A1953D007CF2FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B0CAFBD27A30394007CF2FD /* SendPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPostViewController.swift; sourceTree = "<group>"; };
+		1BBAD75527BA75840058DF7D /* FriendsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListController.swift; sourceTree = "<group>"; };
+		1BBAD75727BA931C0058DF7D /* FriendsXMLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsXMLModel.swift; sourceTree = "<group>"; };
+		1BBAD75A27BC07880058DF7D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		1BBAD75C27BC07C60058DF7D /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Friend+CoreDataProperties.swift"; path = "/Users/artemsolohin/Desktop/Projects/LiruIos/LiruIos/LiruIos/Friend+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		1BBAD75D27BC07C60058DF7D /* Friend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Friend+CoreDataClass.swift"; path = "/Users/artemsolohin/Desktop/Projects/LiruIos/LiruIos/LiruIos/Friend+CoreDataClass.swift"; sourceTree = "<absolute>"; };
 		1BFEC9BA27A5B896005C2FF5 /* URLQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQuery.swift; sourceTree = "<group>"; };
+		1BFEC9BC27A6D28A005C2FF5 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
+		1BFEC9BE27B17E42005C2FF5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5FED4D443EA5290655ACF078 /* Pods-LiruIos.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiruIos.debug.xcconfig"; path = "Target Support Files/Pods-LiruIos/Pods-LiruIos.debug.xcconfig"; sourceTree = "<group>"; };
 		E281FD087C203EBE2C7DD10B /* Pods-LiruIos.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LiruIos.release.xcconfig"; path = "Target Support Files/Pods-LiruIos/Pods-LiruIos.release.xcconfig"; sourceTree = "<group>"; };
 		F4A928515DB829D5100F7BE1 /* Pods_LiruIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiruIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +81,8 @@
 		1B0CAFA827A19538007CF2FD /* LiruIos */ = {
 			isa = PBXGroup;
 			children = (
+				1BBAD75D27BC07C60058DF7D /* Friend+CoreDataClass.swift */,
+				1BBAD75C27BC07C60058DF7D /* Friend+CoreDataProperties.swift */,
 				1B0CAFA927A19538007CF2FD /* AppDelegate.swift */,
 				1B0CAFAB27A19538007CF2FD /* SceneDelegate.swift */,
 				1B0CAFAD27A19538007CF2FD /* ViewController.swift */,
@@ -76,6 +92,11 @@
 				1B0CAFB727A1953D007CF2FD /* Info.plist */,
 				1B0CAFBD27A30394007CF2FD /* SendPostViewController.swift */,
 				1BFEC9BA27A5B896005C2FF5 /* URLQuery.swift */,
+				1BFEC9BC27A6D28A005C2FF5 /* PostViewController.swift */,
+				1BFEC9BE27B17E42005C2FF5 /* Constants.swift */,
+				1BBAD75527BA75840058DF7D /* FriendsListController.swift */,
+				1BBAD75727BA931C0058DF7D /* FriendsXMLModel.swift */,
+				1BBAD75927BC07880058DF7D /* Model.xcdatamodeld */,
 			);
 			path = LiruIos;
 			sourceTree = "<group>";
@@ -212,9 +233,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BBAD75827BA931C0058DF7D /* FriendsXMLModel.swift in Sources */,
+				1BBAD75F27BC07C60058DF7D /* Friend+CoreDataClass.swift in Sources */,
+				1BFEC9BD27A6D28A005C2FF5 /* PostViewController.swift in Sources */,
+				1BBAD75E27BC07C60058DF7D /* Friend+CoreDataProperties.swift in Sources */,
 				1B0CAFAE27A19538007CF2FD /* ViewController.swift in Sources */,
 				1B0CAFAA27A19538007CF2FD /* AppDelegate.swift in Sources */,
+				1BBAD75627BA75840058DF7D /* FriendsListController.swift in Sources */,
 				1B0CAFBE27A30394007CF2FD /* SendPostViewController.swift in Sources */,
+				1BFEC9BF27B17E43005C2FF5 /* Constants.swift in Sources */,
+				1BBAD75B27BC07880058DF7D /* Model.xcdatamodeld in Sources */,
 				1B0CAFAC27A19538007CF2FD /* SceneDelegate.swift in Sources */,
 				1BFEC9BB27A5B896005C2FF5 /* URLQuery.swift in Sources */,
 			);
@@ -436,6 +464,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1BBAD75927BC07880058DF7D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1BBAD75A27BC07880058DF7D /* Model.xcdatamodel */,
+			);
+			currentVersion = 1BBAD75A27BC07880058DF7D /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1B0CAF9E27A19538007CF2FD /* Project object */;
 }

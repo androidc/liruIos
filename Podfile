@@ -8,4 +8,6 @@ target 'LiruIos' do
   # Pods for LiruIos
  pod 'SnapKit', '~> 5.0.0'
   pod 'Alamofire', '~> 5.4'
+  pod 'XMLMapper'
+  pod 'XMLMapper/Requests'
 end

@@ -1,20 +1,30 @@
 PODS:
   - Alamofire (5.5.0)
   - SnapKit (5.0.1)
+  - XMLMapper (2.0.0):
+    - XMLMapper/Core (= 2.0.0)
+  - XMLMapper/Core (2.0.0)
+  - XMLMapper/Requests (2.0.0):
+    - Alamofire (~> 5.4)
+    - XMLMapper/Core
 
 DEPENDENCIES:
   - Alamofire (~> 5.4)
   - SnapKit (~> 5.0.0)
+  - XMLMapper
+  - XMLMapper/Requests
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - SnapKit
+    - XMLMapper
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  XMLMapper: 45ff16367092620b0b4adbc5e42dd8db6ebb5e0d
 
-PODFILE CHECKSUM: 9c2e138fec0964bb7729a0e94a996332dbdabce2
+PODFILE CHECKSUM: 83eda475212c41179d9ac7642d10a19960eda536
 
 COCOAPODS: 1.8.4
