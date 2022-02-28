@@ -143,7 +143,7 @@ extension FavoritesListController:UITableViewDataSource,UITableViewDelegate,UISe
     func searchBar(_ searchBar: UISearchBar,
                             textDidChange searchText: String) {
         
-       // print(searchText)
+      
         // сфетчить данные по имени
         
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = FavoritesModel.fetchRequest()
