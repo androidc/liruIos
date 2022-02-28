@@ -18,6 +18,9 @@ class FriendsListController: UIViewController {
     var bbpassword = ""
     var jurl = ""
     
+    
+    @IBOutlet weak var SearchBar: UISearchBar!
+    
     private let persistContainer = NSPersistentContainer(name:"Model")
     
     private lazy var fetchedResultsController: NSFetchedResultsController<FriendModel> = {
@@ -34,15 +37,27 @@ class FriendsListController: UIViewController {
         return fetchedResultController
     }()
     
+    private lazy var FavoritesResultsController:NSFetchedResultsController<FavoritesModel> = {
+        let fetchRequest = FavoritesModel.fetchRequest()
+        let sortDescriptor = NSSortDescriptor(key:"nick", ascending:true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        fetchRequest.predicate = NSPredicate(format: "bbuserid == %@", bbuserid)
+        let fetchedResultController = NSFetchedResultsController(fetchRequest: fetchRequest,managedObjectContext: self.persistContainer.viewContext,sectionNameKeyPath:nil,cacheName:nil)
+       // fetchedResultController.delegate = self
+        return fetchedResultController
+        
+    }()
     
     @IBOutlet weak var tableView: UITableView!
     
-
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
+        tableView.delegate = self
+        SearchBar.delegate = self
         
         persistContainer.loadPersistentStores(completionHandler: {
             (persistentStoreDescription,error) in
@@ -52,6 +67,7 @@ class FriendsListController: UIViewController {
             {
                 do {
                     try self.fetchedResultsController.performFetch()
+                    try self.FavoritesResultsController.performFetch()
                 } catch  {
                     print(error)
                 }            }
@@ -136,10 +152,27 @@ class FriendsListController: UIViewController {
     
 }
 
-extension FriendsListController:UITableViewDataSource {
+extension FriendsListController:UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate {
    
     func tableView(_ tableView:UITableView, canEditRowAt indexPath:  IndexPath) -> Bool {
         return true
+    }
+    
+    func searchBar(_ searchBar: UISearchBar,
+                            textDidChange searchText: String) {
+        
+       // print(searchText)
+        // сфетчить данные по имени
+        
+        let fetchRequest: NSFetchRequest<NSFetchRequestResult> = FriendModel.fetchRequest()
+        fetchRequest.predicate = NSPredicate(format: "nick CONTAINS[c] %@", searchText)
+        
+        fetchedResultsController.fetchRequest.predicate = fetchRequest.predicate
+        try? fetchedResultsController.performFetch()
+        tableView.reloadData()
+        
+        
+        
     }
     
     
@@ -160,11 +193,71 @@ extension FriendsListController:UITableViewDataSource {
 
     }
     
+    
+    
+    // метод обрабатывающий нажатие на ячейку
+     func tableView(_ tableView:UITableView,didSelectRowAt indexPath:IndexPath) {
+     // проверить есть ли запись в Favorites
+         let fetchRequest = FavoritesModel.fetchRequest()
+         let friend = fetchedResultsController.object(at: indexPath)
+         fetchRequest.predicate = NSPredicate(format: "name == %@", friend.name!)
+         let context = persistContainer.viewContext
+         var obj = try? context.fetch(fetchRequest)
+         
+         if obj?.count ?? 0 > 0 {
+             print("запись есть")
+             for object in obj! {
+                    context.delete(object)
+                }
+             
+             do {
+                 try context.save()
+                 tableView.reloadData()
+             } catch {
+                 print(error.localizedDescription)
+             }
+            
+             
+             
+         } else {
+             print("записи нет")
+             let favorite = FavoritesModel.init(entity: NSEntityDescription.entity(forEntityName: "FavoritesModel", in: (self.persistContainer.viewContext))!, insertInto: self.persistContainer.viewContext)
+             favorite.name = friend.name
+             favorite.nick = friend.nick
+             favorite.bbuserid = friend.bbuserid
+             favorite.url = friend.url
+             try? favorite.managedObjectContext?.save()
+             tableView.reloadData()
+             
+         }
+         
+//         if obj == obj {
+//             // есть запись в Favorites, нужно удалить из favorites
+//             print("запись есть")
+//             print(obj![0].name!)
+//         } else {
+//             // нет записи в Favorites, нужно добавить
+//             print("записи есть")
+//         }
+         
+      
+     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let friend = fetchedResultsController.object(at: indexPath)
         let cell = UITableViewCell()
         cell.textLabel?.text = friend.nick
+        
+        let fetchRequest = FavoritesModel.fetchRequest()
+       
+        fetchRequest.predicate = NSPredicate(format: "name == %@", friend.name!)
+        let context = persistContainer.viewContext
+        let obj = try? context.fetch(fetchRequest)
        // print("\(indexPath) \(friend.nick)")
+        if obj?.count ?? 0 > 0 {
+            cell.textLabel?.textColor = .red
+        }
+        else {cell.textLabel?.textColor = .black}
         return cell
     }
     

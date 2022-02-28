@@ -19,6 +19,10 @@
 		1BBAD75B27BC07880058DF7D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD75927BC07880058DF7D /* Model.xcdatamodeld */; };
 		1BBAD75E27BC07C60058DF7D /* Friend+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD75C27BC07C60058DF7D /* Friend+CoreDataProperties.swift */; };
 		1BBAD75F27BC07C60058DF7D /* Friend+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD75D27BC07C60058DF7D /* Friend+CoreDataClass.swift */; };
+		1BBAD76427C6A41B0058DF7D /* FavoritesModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD76027C6A3E90058DF7D /* FavoritesModel+CoreDataClass.swift */; };
+		1BBAD76527C6A41B0058DF7D /* FavoritesModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD76127C6A3E90058DF7D /* FavoritesModel+CoreDataProperties.swift */; };
+		1BBAD76927CCC2BD0058DF7D /* FavoritesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD76827CCC2BD0058DF7D /* FavoritesListController.swift */; };
+		1BBAD76B27CCD5220058DF7D /* RSSXMLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD76A27CCD5220058DF7D /* RSSXMLModel.swift */; };
 		1BFEC9BB27A5B896005C2FF5 /* URLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEC9BA27A5B896005C2FF5 /* URLQuery.swift */; };
 		1BFEC9BD27A6D28A005C2FF5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEC9BC27A6D28A005C2FF5 /* PostViewController.swift */; };
 		1BFEC9BF27B17E43005C2FF5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEC9BE27B17E42005C2FF5 /* Constants.swift */; };
@@ -40,6 +44,10 @@
 		1BBAD75A27BC07880058DF7D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		1BBAD75C27BC07C60058DF7D /* Friend+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Friend+CoreDataProperties.swift"; path = "/Users/artemsolohin/Desktop/Projects/LiruIos/LiruIos/LiruIos/Friend+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		1BBAD75D27BC07C60058DF7D /* Friend+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Friend+CoreDataClass.swift"; path = "/Users/artemsolohin/Desktop/Projects/LiruIos/LiruIos/LiruIos/Friend+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		1BBAD76027C6A3E90058DF7D /* FavoritesModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavoritesModel+CoreDataClass.swift"; path = "/Users/artemsolohin/Desktop/Projects/LiruIos/LiruIos/LiruIos/FavoritesModel+CoreDataClass.swift"; sourceTree = "<absolute>"; };
+		1BBAD76127C6A3E90058DF7D /* FavoritesModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavoritesModel+CoreDataProperties.swift"; path = "/Users/artemsolohin/Desktop/Projects/LiruIos/LiruIos/LiruIos/FavoritesModel+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
+		1BBAD76827CCC2BD0058DF7D /* FavoritesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListController.swift; sourceTree = "<group>"; };
+		1BBAD76A27CCD5220058DF7D /* RSSXMLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSXMLModel.swift; sourceTree = "<group>"; };
 		1BFEC9BA27A5B896005C2FF5 /* URLQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQuery.swift; sourceTree = "<group>"; };
 		1BFEC9BC27A6D28A005C2FF5 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		1BFEC9BE27B17E42005C2FF5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -81,6 +89,8 @@
 		1B0CAFA827A19538007CF2FD /* LiruIos */ = {
 			isa = PBXGroup;
 			children = (
+				1BBAD76027C6A3E90058DF7D /* FavoritesModel+CoreDataClass.swift */,
+				1BBAD76127C6A3E90058DF7D /* FavoritesModel+CoreDataProperties.swift */,
 				1BBAD75D27BC07C60058DF7D /* Friend+CoreDataClass.swift */,
 				1BBAD75C27BC07C60058DF7D /* Friend+CoreDataProperties.swift */,
 				1B0CAFA927A19538007CF2FD /* AppDelegate.swift */,
@@ -97,6 +107,8 @@
 				1BBAD75527BA75840058DF7D /* FriendsListController.swift */,
 				1BBAD75727BA931C0058DF7D /* FriendsXMLModel.swift */,
 				1BBAD75927BC07880058DF7D /* Model.xcdatamodeld */,
+				1BBAD76827CCC2BD0058DF7D /* FavoritesListController.swift */,
+				1BBAD76A27CCD5220058DF7D /* RSSXMLModel.swift */,
 			);
 			path = LiruIos;
 			sourceTree = "<group>";
@@ -233,9 +245,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BBAD76927CCC2BD0058DF7D /* FavoritesListController.swift in Sources */,
+				1BBAD76427C6A41B0058DF7D /* FavoritesModel+CoreDataClass.swift in Sources */,
+				1BBAD76527C6A41B0058DF7D /* FavoritesModel+CoreDataProperties.swift in Sources */,
 				1BBAD75827BA931C0058DF7D /* FriendsXMLModel.swift in Sources */,
 				1BBAD75F27BC07C60058DF7D /* Friend+CoreDataClass.swift in Sources */,
 				1BFEC9BD27A6D28A005C2FF5 /* PostViewController.swift in Sources */,
+				1BBAD76B27CCD5220058DF7D /* RSSXMLModel.swift in Sources */,
 				1BBAD75E27BC07C60058DF7D /* Friend+CoreDataProperties.swift in Sources */,
 				1B0CAFAE27A19538007CF2FD /* ViewController.swift in Sources */,
 				1B0CAFAA27A19538007CF2FD /* AppDelegate.swift in Sources */,

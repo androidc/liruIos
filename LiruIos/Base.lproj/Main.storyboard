@@ -97,6 +97,9 @@
                                 <rect key="frame" x="100" y="367" width="214" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Избранные"/>
+                                <connections>
+                                    <segue destination="yig-qz-sEX" kind="show" id="qoJ-jE-7KT"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Vm-ZJ-rKr">
                                 <rect key="frame" x="100" y="472" width="214" height="31"/>
@@ -233,6 +236,68 @@
             </objects>
             <point key="canvasLocation" x="1845" y="-174"/>
         </scene>
+        <!--Favorites List Controller-->
+        <scene sceneID="jnu-t4-HSb">
+            <objects>
+                <viewController id="yig-qz-sEX" customClass="FavoritesListController" customModule="LiruIos" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fLy-78-QQh">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="VY2-sS-lzv">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="fYi-Sy-ZyL"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="OPt-AY-kqg">
+                                <rect key="frame" x="20" y="44" width="374" height="710"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsO-gv-GbW">
+                                <rect key="frame" x="20" y="762" width="118" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Комментарии"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YnN-BD-dML">
+                                <rect key="frame" x="274" y="762" width="120" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="1ae-00-NQ7"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Посты"/>
+                                <connections>
+                                    <action selector="getPostsButton:" destination="yig-qz-sEX" eventType="touchUpInside" id="NTU-ny-p5d"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bfj-NJ-gm9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OPt-AY-kqg" firstAttribute="leading" secondItem="Bfj-NJ-gm9" secondAttribute="leading" constant="20" id="4ED-z6-hPy"/>
+                            <constraint firstItem="Bfj-NJ-gm9" firstAttribute="trailing" secondItem="VY2-sS-lzv" secondAttribute="trailing" id="5m9-HO-cW4"/>
+                            <constraint firstItem="VY2-sS-lzv" firstAttribute="leading" secondItem="Bfj-NJ-gm9" secondAttribute="leading" id="7il-xh-fTj"/>
+                            <constraint firstItem="Bfj-NJ-gm9" firstAttribute="bottom" secondItem="YnN-BD-dML" secondAttribute="bottom" constant="15" id="P2K-pl-W7s"/>
+                            <constraint firstItem="VY2-sS-lzv" firstAttribute="top" secondItem="Bfj-NJ-gm9" secondAttribute="top" id="Rgz-tn-Uzl"/>
+                            <constraint firstItem="Bfj-NJ-gm9" firstAttribute="trailing" secondItem="YnN-BD-dML" secondAttribute="trailing" constant="20" id="f9J-hD-Ipw"/>
+                            <constraint firstItem="Bfj-NJ-gm9" firstAttribute="bottom" secondItem="hsO-gv-GbW" secondAttribute="bottom" constant="15" id="jWa-do-LwP"/>
+                            <constraint firstItem="Bfj-NJ-gm9" firstAttribute="trailing" secondItem="OPt-AY-kqg" secondAttribute="trailing" constant="20" id="mJG-MY-Nv1"/>
+                            <constraint firstItem="hsO-gv-GbW" firstAttribute="leading" secondItem="Bfj-NJ-gm9" secondAttribute="leading" constant="20" id="oC0-Kn-jLo"/>
+                            <constraint firstItem="OPt-AY-kqg" firstAttribute="top" secondItem="VY2-sS-lzv" secondAttribute="bottom" id="oIo-Kh-dov"/>
+                            <constraint firstItem="hsO-gv-GbW" firstAttribute="top" secondItem="OPt-AY-kqg" secondAttribute="bottom" constant="8" symbolic="YES" id="qgq-pc-vHn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="bho-Ff-npN"/>
+                    <connections>
+                        <outlet property="SearchBar" destination="VY2-sS-lzv" id="M0Z-6L-Duy"/>
+                        <outlet property="tableView" destination="OPt-AY-kqg" id="zA7-Js-wY7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="K9d-T7-aSr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2576.811594202899" y="229.6875"/>
+        </scene>
         <!--Friends List Controller-->
         <scene sceneID="n7E-Y6-7cA">
             <objects>
@@ -241,14 +306,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iLy-9L-AQ4">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jif-Xy-UC4">
-                                <rect key="frame" x="0.0" y="44" width="414" height="714"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jif-Xy-UC4">
+                                <rect key="frame" x="0.0" y="54" width="414" height="713"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bM-Hy-g1G">
@@ -259,17 +318,32 @@
                                     <action selector="onUpdateButtonClicked:" destination="Z9j-yP-eIJ" eventType="touchUpInside" id="lkt-yw-yVC"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="iLy-9L-AQ4">
+                                <rect key="frame" x="0.0" y="10" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="uvY-SJ-wJR"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="th1-6e-IF2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="9bM-Hy-g1G" firstAttribute="leading" secondItem="th1-6e-IF2" secondAttribute="leading" id="Yl0-Sn-hcR"/>
-                            <constraint firstItem="th1-6e-IF2" firstAttribute="trailing" secondItem="9bM-Hy-g1G" secondAttribute="trailing" id="qif-Ig-ebf"/>
-                            <constraint firstItem="th1-6e-IF2" firstAttribute="bottom" secondItem="9bM-Hy-g1G" secondAttribute="bottom" id="vaN-ZJ-Czo"/>
+                            <constraint firstItem="9bM-Hy-g1G" firstAttribute="top" secondItem="jif-Xy-UC4" secondAttribute="bottom" constant="10" id="FGc-MY-emk"/>
+                            <constraint firstItem="th1-6e-IF2" firstAttribute="trailing" secondItem="iLy-9L-AQ4" secondAttribute="trailing" id="HvL-No-rb6"/>
+                            <constraint firstItem="iLy-9L-AQ4" firstAttribute="leading" secondItem="th1-6e-IF2" secondAttribute="leading" id="N0N-yK-aHa"/>
+                            <constraint firstItem="th1-6e-IF2" firstAttribute="trailing" secondItem="jif-Xy-UC4" secondAttribute="trailing" id="NEY-yG-jDI"/>
+                            <constraint firstItem="th1-6e-IF2" firstAttribute="trailing" secondItem="9bM-Hy-g1G" secondAttribute="trailing" id="Ohf-RA-aeD"/>
+                            <constraint firstItem="jif-Xy-UC4" firstAttribute="leading" secondItem="th1-6e-IF2" secondAttribute="leading" id="S9G-zS-CIM"/>
+                            <constraint firstItem="th1-6e-IF2" firstAttribute="bottom" secondItem="9bM-Hy-g1G" secondAttribute="bottom" id="Ya7-91-wdA"/>
+                            <constraint firstItem="9bM-Hy-g1G" firstAttribute="leading" secondItem="th1-6e-IF2" secondAttribute="leading" id="cHM-ku-f3k"/>
+                            <constraint firstItem="jif-Xy-UC4" firstAttribute="top" secondItem="iLy-9L-AQ4" secondAttribute="bottom" id="rZl-M2-AkP"/>
+                            <constraint firstItem="iLy-9L-AQ4" firstAttribute="top" secondItem="th1-6e-IF2" secondAttribute="top" constant="10" id="wp9-4d-z1g"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2xU-ib-FHn"/>
                     <connections>
+                        <outlet property="SearchBar" destination="iLy-9L-AQ4" id="MjU-Fl-fnx"/>
                         <outlet property="tableView" destination="jif-Xy-UC4" id="3Pb-yC-2vm"/>
                     </connections>
                 </viewController>

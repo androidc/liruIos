@@ -48,6 +48,14 @@ class SendPostViewController: UIViewController {
             friendsVC.jurl = jurl
         }
         
+        if let favoritesVC = segue.destination as?
+        FavoritesListController {
+            favoritesVC.bbuserid = bbuserid
+            favoritesVC.bbpassword = bbpassword
+            favoritesVC.bbusername = bbusername
+            favoritesVC.jurl = jurl
+        }
+        
 //        if segue.destination == PostViewController {
 //            let postVC:PostViewController = segue.destination as! PostViewController
 //            postVC.bbuserid = bbuserid
