@@ -66,7 +66,93 @@ class SendPostViewController: UIViewController {
        
         
     }
+    
+ 
+    private func formatJurl(jurl: String) -> String {
+       return jurl.replacingOccurrences(of: "%3A", with: ":")
+            .replacingOccurrences(of: "%2F", with: "/")
+    }
+    
+    private func GetRssWithCompletion(url:URL,completion: @escaping(_ rssString:String) -> ()) {
+        
+        let session = URLSession.shared
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        request.addValue("application/x-www-form-urlencoded;charset=win-1251", forHTTPHeaderField: "Content-Type")
+        // Form URL-Encoded Body
+        let cookieString = "chbx=guest; jurl=\(jurl);ucss=normal; bbuserid=\(bbuserid); bbpassword=\(bbpassword); bbusername=\(bbusername)"
+        request.addValue(cookieString, forHTTPHeaderField: "Cookie")
+        
+        let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
+            DispatchQueue.main.async {
 
+            if (error == nil) {
+                // Success
+                let statusCode = (response as! HTTPURLResponse).statusCode
+               // print("URL Session Task Succeeded: HTTP \(statusCode)")
+                if statusCode == 200 {
+                    let responseString = NSString(data: data!, encoding: String.Encoding.win1251.rawValue)
+                   
+                    completion(responseString! as String)
+                }
+               
+              
+            
+              }
+              else {
+                // Failure
+                print("URL Session Task Failed: %@", error!.localizedDescription);
+              }}
+            })
+        task.resume()
+        
+        
+        
+    }
+
+    @IBAction func myBlogOpen(_ sender: Any) {
+       //  print(jurl)
+        let rssUlr = "\(formatJurl(jurl: jurl))/rss"
+        GetRssWithCompletion(url: URL(string: rssUlr)!) { rssString in
+           // print(rssString)
+            
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "fpvc") as! FriendPostsController
+            nextViewController.modalPresentationStyle = .fullScreen
+                nextViewController.rssString = rssString
+            
+           
+            nextViewController.nick = self.username
+          
+            
+            self.present(nextViewController, animated: true)
+            
+            
+            
+        }
+        
+    }
+    
+    @IBAction func friendsOpen(_ sender: Any) {
+        let rssUlr = "\(formatJurl(jurl: jurl))/friends/rss"
+        GetRssWithCompletion(url: URL(string: rssUlr)!) { rssString in
+           // print(rssString)
+            
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "fpvc") as! FriendPostsController
+            nextViewController.modalPresentationStyle = .fullScreen
+                nextViewController.rssString = rssString
+            
+           
+            nextViewController.nick = "Лента друзей"
+          
+            
+            self.present(nextViewController, animated: true)
+            
+            
+            
+        }
+    }
     
     @IBAction func ChangeUserButton(_ sender: Any) {
         

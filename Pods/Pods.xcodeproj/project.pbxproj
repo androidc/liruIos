@@ -228,7 +228,7 @@
 		582C9DFA26598B8B57DB1AF378B15859 /* ServerTrustEvaluation.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerTrustEvaluation.swift; path = Source/ServerTrustEvaluation.swift; sourceTree = "<group>"; };
 		589E22D760437572CF5E857ADA63F42C /* LayoutConstraint.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraint.swift; path = Source/LayoutConstraint.swift; sourceTree = "<group>"; };
 		5CAB1A7F3E73E2FADE402EA5B094C05F /* ConstraintDSL.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintDSL.swift; path = Source/ConstraintDSL.swift; sourceTree = "<group>"; };
-		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Alamofire.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D797E9A5C5782CE845840781FA1CC81 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DC0E662C8DC29885241DA30720384F9 /* XMLDateTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLDateTransform.swift; path = XMLMapper/Classes/XMLDateTransform.swift; sourceTree = "<group>"; };
 		5E0F1DC6CB9BD4F0E97B9E5870C19224 /* SOAPBody.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SOAPBody.swift; path = XMLMapper/Classes/Requests/SOAPBody.swift; sourceTree = "<group>"; };
 		5E4E944A7B9D6D9F74C21238E7887125 /* SessionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SessionDelegate.swift; path = Source/SessionDelegate.swift; sourceTree = "<group>"; };
@@ -262,13 +262,13 @@
 		969ADEB26583F341F7593E6643A091A2 /* XMLTransformOf.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLTransformOf.swift; path = XMLMapper/Classes/XMLTransformOf.swift; sourceTree = "<group>"; };
 		96D96C379FF2B568AD8865CE0D99FC09 /* Pods-LiruIos-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LiruIos-acknowledgements.plist"; sourceTree = "<group>"; };
 		971CD9AB2E776770F831C1E0C389E31D /* Result+Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Result+Alamofire.swift"; path = "Source/Result+Alamofire.swift"; sourceTree = "<group>"; };
-		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SnapKit.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		979486118B3E90C08386079D57962701 /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		97DD40D1BA3D566A6AA61E2A2BED760F /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LayoutConstraintItem.swift; path = Source/LayoutConstraintItem.swift; sourceTree = "<group>"; };
-		985D9C9A55956B9B3CCEC199C707BEC1 /* Pods_LiruIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LiruIos.framework; path = "Pods-LiruIos.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		985D9C9A55956B9B3CCEC199C707BEC1 /* Pods_LiruIos.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LiruIos.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ACB51A28D2E6EFCC643BC171D9995BB /* XMLSerialization+ReadingOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "XMLSerialization+ReadingOptions.swift"; path = "XMLMapper/Classes/XMLSerialization+ReadingOptions.swift"; sourceTree = "<group>"; };
 		9D0299C0FA15B38C5A2DF6CA04348560 /* URLEncodedFormEncoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLEncodedFormEncoder.swift; path = Source/URLEncodedFormEncoder.swift; sourceTree = "<group>"; };
 		9D17CF3A646CE0AD761896C4A46370F4 /* XMLDataTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLDataTransform.swift; path = XMLMapper/Classes/XMLDataTransform.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9EF86245026F1F1B84A5D94E6D2C1112 /* Array+cdataString.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Array+cdataString.swift"; path = "XMLMapper/Classes/Array+cdataString.swift"; sourceTree = "<group>"; };
 		9F3AF3D2DC38A4DDF12A919AB0DEFA85 /* XMLHexColorTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLHexColorTransform.swift; path = XMLMapper/Classes/XMLHexColorTransform.swift; sourceTree = "<group>"; };
 		A05904F4AF9B170EEEEA3AF5EBC12DA0 /* XMLURLTransform.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = XMLURLTransform.swift; path = XMLMapper/Classes/XMLURLTransform.swift; sourceTree = "<group>"; };
@@ -284,7 +284,7 @@
 		A866986FD58D0A180EB52BCF7348682B /* SOAPEnvelope.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SOAPEnvelope.swift; path = XMLMapper/Classes/Requests/SOAPEnvelope.swift; sourceTree = "<group>"; };
 		A8F1516215D5BE041A01AEA56F61757D /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerPriortizable.swift; path = Source/ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
 		AC895DE2580F7C2E30DF13E695D38B97 /* RequestTaskMap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RequestTaskMap.swift; path = Source/RequestTaskMap.swift; sourceTree = "<group>"; };
-		ACC5647A6CF177FE24C8DF793C09FF09 /* XMLMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = XMLMapper.framework; path = XMLMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACC5647A6CF177FE24C8DF793C09FF09 /* XMLMapper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = XMLMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADCA163EACE1E3E36C707C4419974D3A /* Concurrency.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Concurrency.swift; path = Source/Concurrency.swift; sourceTree = "<group>"; };
 		AE73B2B0631A585B57602D344FD92389 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConstraintMakerExtendable.swift; path = Source/ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
 		AF11FD9831AA990A0BC289A88328E584 /* ParameterEncoding.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ParameterEncoding.swift; path = Source/ParameterEncoding.swift; sourceTree = "<group>"; };
@@ -407,7 +407,6 @@
 				D8644CC371F2D69F191295DA11DAC9D6 /* UILayoutSupport+Extensions.swift */,
 				3862C47C08514237963A00CAEAD5B20A /* Support Files */,
 			);
-			name = SnapKit;
 			path = SnapKit;
 			sourceTree = "<group>";
 		};
@@ -585,7 +584,6 @@
 				6F408106634B3556641222481011062C /* Validation.swift */,
 				9157628275E99DAB54CD912E58409E55 /* Support Files */,
 			);
-			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -626,7 +624,6 @@
 				A035159C2AA786F2E956070D5A834784 /* Requests */,
 				FF62CDD86E4E8B89AA015C760878F4F6 /* Support Files */,
 			);
-			name = XMLMapper;
 			path = XMLMapper;
 			sourceTree = "<group>";
 		};
@@ -765,7 +762,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1240;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 1310;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 13.0";
@@ -1016,7 +1013,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1051,7 +1048,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1087,7 +1084,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SnapKit/SnapKit-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SnapKit/SnapKit-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1324,7 +1321,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/XMLMapper/XMLMapper-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/XMLMapper/XMLMapper-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1359,7 +1356,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/Alamofire/Alamofire-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/Alamofire/Alamofire-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1394,7 +1391,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/XMLMapper/XMLMapper-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/XMLMapper/XMLMapper-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -84,6 +84,9 @@
                                 <rect key="frame" x="100" y="247" width="214" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Мой дневник"/>
+                                <connections>
+                                    <action selector="myBlogOpen:" destination="3v7-w3-y4B" eventType="touchUpInside" id="hpq-92-3gL"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oLr-kx-7Ll">
                                 <rect key="frame" x="100" y="307" width="214" height="31"/>
@@ -115,11 +118,23 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxM-Uy-xHw">
+                                <rect key="frame" x="100" y="420" width="214" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Лента друзей"/>
+                                <connections>
+                                    <action selector="friendsOpen:" destination="3v7-w3-y4B" eventType="touchUpInside" id="Lac-O0-p4U"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EdM-FO-qCZ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="DxM-Uy-xHw" firstAttribute="leading" secondItem="EdM-FO-qCZ" secondAttribute="leading" constant="100" id="2F3-jL-zZl"/>
+                            <constraint firstItem="7Vm-ZJ-rKr" firstAttribute="top" secondItem="DxM-Uy-xHw" secondAttribute="bottom" constant="21" id="3Bt-Nf-uoZ"/>
                             <constraint firstItem="oLr-kx-7Ll" firstAttribute="leading" secondItem="EdM-FO-qCZ" secondAttribute="leading" constant="100" id="5IP-KH-CMD"/>
+                            <constraint firstItem="DxM-Uy-xHw" firstAttribute="top" secondItem="L5g-HC-yC1" secondAttribute="bottom" constant="22" id="5i6-jE-h7Q"/>
+                            <constraint firstItem="EdM-FO-qCZ" firstAttribute="trailing" secondItem="DxM-Uy-xHw" secondAttribute="trailing" constant="100" id="8e7-SX-uVe"/>
                             <constraint firstItem="7Vm-ZJ-rKr" firstAttribute="leading" secondItem="EdM-FO-qCZ" secondAttribute="leading" constant="100" id="8n2-Jn-pE5"/>
                             <constraint firstItem="oLr-kx-7Ll" firstAttribute="top" secondItem="cl8-Ju-dYG" secondAttribute="bottom" constant="29" id="DQ3-Is-7tJ"/>
                             <constraint firstItem="ifn-rr-9hR" firstAttribute="leading" secondItem="EdM-FO-qCZ" secondAttribute="leading" constant="50" id="FKd-Ri-fNp"/>
@@ -131,7 +146,6 @@
                             <constraint firstItem="EdM-FO-qCZ" firstAttribute="trailing" secondItem="ifn-rr-9hR" secondAttribute="trailing" constant="50" id="O3o-yz-TcR"/>
                             <constraint firstItem="EdM-FO-qCZ" firstAttribute="trailing" secondItem="L5g-HC-yC1" secondAttribute="trailing" constant="100" id="bhc-wi-jV8"/>
                             <constraint firstItem="EdM-FO-qCZ" firstAttribute="trailing" secondItem="oLr-kx-7Ll" secondAttribute="trailing" constant="100" id="dPM-5l-erx"/>
-                            <constraint firstItem="7Vm-ZJ-rKr" firstAttribute="top" secondItem="L5g-HC-yC1" secondAttribute="bottom" constant="74" id="i11-S1-7nD"/>
                             <constraint firstItem="e7y-Pl-cZz" firstAttribute="leading" secondItem="EdM-FO-qCZ" secondAttribute="leading" constant="100" id="jOr-tr-btP"/>
                             <constraint firstItem="ifn-rr-9hR" firstAttribute="top" secondItem="EdM-FO-qCZ" secondAttribute="top" constant="61" id="kFR-ZX-5yZ"/>
                             <constraint firstItem="L5g-HC-yC1" firstAttribute="top" secondItem="oLr-kx-7Ll" secondAttribute="bottom" constant="29" id="sVH-hb-cD9"/>
@@ -297,6 +311,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9d-T7-aSr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2576.811594202899" y="229.6875"/>
+        </scene>
+        <!--Friend Posts Controller-->
+        <scene sceneID="afV-Jk-33K">
+            <objects>
+                <viewController storyboardIdentifier="fpvc" id="Law-tr-ogV" customClass="FriendPostsController" customModule="LiruIos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ITU-h1-7Pt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KmQ-3E-u03">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="Title" id="1l9-Jh-eqU">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="M2j-tj-MAo">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="EAI-T9-S7C">
+                                                <rect key="frame" x="20" y="5" width="92" height="34.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Назад"/>
+                                                <connections>
+                                                    <action selector="backButton:" destination="Law-tr-ogV" eventType="touchUpInside" id="aSk-6a-sw5"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-jh-pDQ">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BpW-Es-3dV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BpW-Es-3dV" firstAttribute="trailing" secondItem="ljv-jh-pDQ" secondAttribute="trailing" id="Qxk-Ph-lou"/>
+                            <constraint firstItem="ljv-jh-pDQ" firstAttribute="top" secondItem="BpW-Es-3dV" secondAttribute="top" constant="44" id="SCk-6G-myb"/>
+                            <constraint firstItem="ljv-jh-pDQ" firstAttribute="leading" secondItem="BpW-Es-3dV" secondAttribute="leading" id="Ugm-90-sRP"/>
+                            <constraint firstItem="BpW-Es-3dV" firstAttribute="bottom" secondItem="ljv-jh-pDQ" secondAttribute="bottom" id="dLM-f8-XOq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="CustomTitle" destination="1l9-Jh-eqU" id="TG9-Ph-2ey"/>
+                        <outlet property="tableView" destination="ljv-jh-pDQ" id="iSx-7n-V1a"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhc-U9-5Fg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3554" y="230"/>
         </scene>
         <!--Friends List Controller-->
         <scene sceneID="n7E-Y6-7cA">

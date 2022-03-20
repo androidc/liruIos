@@ -23,6 +23,9 @@
 		1BBAD76527C6A41B0058DF7D /* FavoritesModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD76127C6A3E90058DF7D /* FavoritesModel+CoreDataProperties.swift */; };
 		1BBAD76927CCC2BD0058DF7D /* FavoritesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD76827CCC2BD0058DF7D /* FavoritesListController.swift */; };
 		1BBAD76B27CCD5220058DF7D /* RSSXMLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD76A27CCD5220058DF7D /* RSSXMLModel.swift */; };
+		1BBAD77027CD0C490058DF7D /* FriendPostsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD76F27CD0C480058DF7D /* FriendPostsController.swift */; };
+		1BBAD77327CD1CE20058DF7D /* RssCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBAD77227CD1CE20058DF7D /* RssCell.xib */; };
+		1BBAD77527CD1D230058DF7D /* RssCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD77427CD1D230058DF7D /* RssCellClass.swift */; };
 		1BFEC9BB27A5B896005C2FF5 /* URLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEC9BA27A5B896005C2FF5 /* URLQuery.swift */; };
 		1BFEC9BD27A6D28A005C2FF5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEC9BC27A6D28A005C2FF5 /* PostViewController.swift */; };
 		1BFEC9BF27B17E43005C2FF5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEC9BE27B17E42005C2FF5 /* Constants.swift */; };
@@ -48,6 +51,9 @@
 		1BBAD76127C6A3E90058DF7D /* FavoritesModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "FavoritesModel+CoreDataProperties.swift"; path = "/Users/artemsolohin/Desktop/Projects/LiruIos/LiruIos/LiruIos/FavoritesModel+CoreDataProperties.swift"; sourceTree = "<absolute>"; };
 		1BBAD76827CCC2BD0058DF7D /* FavoritesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListController.swift; sourceTree = "<group>"; };
 		1BBAD76A27CCD5220058DF7D /* RSSXMLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSXMLModel.swift; sourceTree = "<group>"; };
+		1BBAD76F27CD0C480058DF7D /* FriendPostsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPostsController.swift; sourceTree = "<group>"; };
+		1BBAD77227CD1CE20058DF7D /* RssCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RssCell.xib; sourceTree = "<group>"; };
+		1BBAD77427CD1D230058DF7D /* RssCellClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssCellClass.swift; sourceTree = "<group>"; };
 		1BFEC9BA27A5B896005C2FF5 /* URLQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQuery.swift; sourceTree = "<group>"; };
 		1BFEC9BC27A6D28A005C2FF5 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		1BFEC9BE27B17E42005C2FF5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -89,10 +95,10 @@
 		1B0CAFA827A19538007CF2FD /* LiruIos */ = {
 			isa = PBXGroup;
 			children = (
-				1BBAD76027C6A3E90058DF7D /* FavoritesModel+CoreDataClass.swift */,
-				1BBAD76127C6A3E90058DF7D /* FavoritesModel+CoreDataProperties.swift */,
-				1BBAD75D27BC07C60058DF7D /* Friend+CoreDataClass.swift */,
-				1BBAD75C27BC07C60058DF7D /* Friend+CoreDataProperties.swift */,
+				1BBAD77127CD1CB10058DF7D /* RssCell */,
+				1BBAD76E27CCF9E70058DF7D /* Utility */,
+				1BBAD76D27CCF9920058DF7D /* XMLModel */,
+				1BBAD76C27CCF97C0058DF7D /* CoreDataModels */,
 				1B0CAFA927A19538007CF2FD /* AppDelegate.swift */,
 				1B0CAFAB27A19538007CF2FD /* SceneDelegate.swift */,
 				1B0CAFAD27A19538007CF2FD /* ViewController.swift */,
@@ -101,16 +107,51 @@
 				1B0CAFB427A1953D007CF2FD /* LaunchScreen.storyboard */,
 				1B0CAFB727A1953D007CF2FD /* Info.plist */,
 				1B0CAFBD27A30394007CF2FD /* SendPostViewController.swift */,
-				1BFEC9BA27A5B896005C2FF5 /* URLQuery.swift */,
 				1BFEC9BC27A6D28A005C2FF5 /* PostViewController.swift */,
 				1BFEC9BE27B17E42005C2FF5 /* Constants.swift */,
 				1BBAD75527BA75840058DF7D /* FriendsListController.swift */,
-				1BBAD75727BA931C0058DF7D /* FriendsXMLModel.swift */,
 				1BBAD75927BC07880058DF7D /* Model.xcdatamodeld */,
 				1BBAD76827CCC2BD0058DF7D /* FavoritesListController.swift */,
-				1BBAD76A27CCD5220058DF7D /* RSSXMLModel.swift */,
+				1BBAD76F27CD0C480058DF7D /* FriendPostsController.swift */,
 			);
 			path = LiruIos;
+			sourceTree = "<group>";
+		};
+		1BBAD76C27CCF97C0058DF7D /* CoreDataModels */ = {
+			isa = PBXGroup;
+			children = (
+				1BBAD76027C6A3E90058DF7D /* FavoritesModel+CoreDataClass.swift */,
+				1BBAD76127C6A3E90058DF7D /* FavoritesModel+CoreDataProperties.swift */,
+				1BBAD75D27BC07C60058DF7D /* Friend+CoreDataClass.swift */,
+				1BBAD75C27BC07C60058DF7D /* Friend+CoreDataProperties.swift */,
+			);
+			path = CoreDataModels;
+			sourceTree = "<group>";
+		};
+		1BBAD76D27CCF9920058DF7D /* XMLModel */ = {
+			isa = PBXGroup;
+			children = (
+				1BBAD76A27CCD5220058DF7D /* RSSXMLModel.swift */,
+				1BBAD75727BA931C0058DF7D /* FriendsXMLModel.swift */,
+			);
+			path = XMLModel;
+			sourceTree = "<group>";
+		};
+		1BBAD76E27CCF9E70058DF7D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				1BFEC9BA27A5B896005C2FF5 /* URLQuery.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		1BBAD77127CD1CB10058DF7D /* RssCell */ = {
+			isa = PBXGroup;
+			children = (
+				1BBAD77227CD1CE20058DF7D /* RssCell.xib */,
+				1BBAD77427CD1D230058DF7D /* RssCellClass.swift */,
+			);
+			path = RssCell;
 			sourceTree = "<group>";
 		};
 		50167A1C515AF086909B374E /* Frameworks */ = {
@@ -190,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BBAD77327CD1CE20058DF7D /* RssCell.xib in Resources */,
 				1B0CAFB627A1953D007CF2FD /* LaunchScreen.storyboard in Resources */,
 				1B0CAFB327A1953D007CF2FD /* Assets.xcassets in Resources */,
 				1B0CAFB127A19538007CF2FD /* Main.storyboard in Resources */,
@@ -257,6 +299,8 @@
 				1B0CAFAA27A19538007CF2FD /* AppDelegate.swift in Sources */,
 				1BBAD75627BA75840058DF7D /* FriendsListController.swift in Sources */,
 				1B0CAFBE27A30394007CF2FD /* SendPostViewController.swift in Sources */,
+				1BBAD77027CD0C490058DF7D /* FriendPostsController.swift in Sources */,
+				1BBAD77527CD1D230058DF7D /* RssCellClass.swift in Sources */,
 				1BFEC9BF27B17E43005C2FF5 /* Constants.swift in Sources */,
 				1BBAD75B27BC07880058DF7D /* Model.xcdatamodeld in Sources */,
 				1B0CAFAC27A19538007CF2FD /* SceneDelegate.swift in Sources */,

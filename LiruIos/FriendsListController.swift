@@ -85,7 +85,7 @@ class FriendsListController: UIViewController {
             
           //  print(responseString)
                
-        if  let friends = XMLMapper<Friend>().map(XMLString: responseString as! String) {
+            if  let friends = XMLMapper<Friend>().map(XMLString: responseString! as String) {
             let fetchRequest: NSFetchRequest<NSFetchRequestResult> = FriendModel.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "bbuserid == %@", self.bbuserid)
             let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
@@ -202,7 +202,7 @@ extension FriendsListController:UITableViewDataSource,UITableViewDelegate,UISear
          let friend = fetchedResultsController.object(at: indexPath)
          fetchRequest.predicate = NSPredicate(format: "name == %@", friend.name!)
          let context = persistContainer.viewContext
-         var obj = try? context.fetch(fetchRequest)
+         let obj = try? context.fetch(fetchRequest)
          
          if obj?.count ?? 0 > 0 {
              print("запись есть")
@@ -260,6 +260,7 @@ extension FriendsListController:UITableViewDataSource,UITableViewDelegate,UISear
         else {cell.textLabel?.textColor = .black}
         return cell
     }
+
     
     
 }

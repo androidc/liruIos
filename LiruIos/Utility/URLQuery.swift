@@ -64,7 +64,22 @@ extension String {
     return percentEscaped
   }
   
+    func addingPercentEncodingWithSpace(withAllowedCharacters characterSet: CharacterSet, using encoding: String.Encoding) -> String {
+      let stringData = self.data(using: encoding, allowLossyConversion: true) ?? Data()
+      let percentEscaped = stringData.map {byte->String in
+        if characterSet.contains(UnicodeScalar(byte)) {
+          return String(UnicodeScalar(byte))
+        } else {
+          return String(format: "%%%02X", byte)
+        }
+        }.joined()
+      return percentEscaped
+    }
   var win1251Encoded: String {
     return self.addingPercentEncoding(withAllowedCharacters: .rfc3986Unreserved,  using: . win1251)
   }
+    
+    var win1251EncodedWithSpace: String {
+      return self.addingPercentEncodingWithSpace(withAllowedCharacters: .rfc3986Unreserved,  using: . win1251)
+    }
 }

@@ -97,7 +97,7 @@ class FavoritesListController: UIViewController {
                 if statusCode == 200 {
                     let responseString = NSString(data: data!, encoding: String.Encoding.win1251.rawValue)
                    
-                    completion(responseString as! String)
+                    completion(responseString! as String)
                 }
                
               
@@ -121,8 +121,18 @@ class FavoritesListController: UIViewController {
     
         activityIndicator.startAnimating()
         GetRssWithCompletion(url: URL(string: rssUlr)!) { rssString in
-            print(rssString)
+           // print(rssString)
             self.activityIndicator.stopAnimating()
+            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "fpvc") as! FriendPostsController
+            nextViewController.modalPresentationStyle = .fullScreen
+                nextViewController.rssString = rssString
+            nextViewController.nick = selectedFriend.nick!
+            
+            self.present(nextViewController, animated: true)
+            
+            
+            
         }
         
         

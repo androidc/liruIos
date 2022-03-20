@@ -33,7 +33,7 @@ class channel:XMLMappable {
     required init?(map: XMLMap) {}
     
     func mapping(map: XMLMap) {
-        title <- map["title"]
+        title <- (map["title"], XMLCDATATransform())
         link <- map["link"]
         image <- map["image"]
         item <- map["item"]
@@ -62,10 +62,10 @@ class item:XMLMappable {
     
     required init?(map: XMLMap) {}
     func mapping(map: XMLMap) {
-        title <- map["title"]
-        link <- map["link"]
-        description <- map["description"]
-        category <- map["category"]
+        title <- (map["title"], XMLCDATATransform())
+        link <- (map["link"], XMLCDATATransform())
+        description <- (map["description"], XMLCDATATransform())
+        category <- (map["category"], XMLCDATATransform())
         comments <- map["slash:comments"]
     }
     
