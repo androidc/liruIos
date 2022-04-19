@@ -123,6 +123,12 @@ class SendPostViewController: UIViewController {
             
            
             nextViewController.nick = self.username
+            nextViewController.isMyBlog = true
+            
+            nextViewController.bbuserid = self.bbuserid
+            nextViewController.bbusername = self.bbusername
+            nextViewController.bbpassword = self.bbpassword
+            nextViewController.jurl = self.jurl
           
             
             self.present(nextViewController, animated: true)
@@ -145,7 +151,12 @@ class SendPostViewController: UIViewController {
             
            
             nextViewController.nick = "Лента друзей"
-          
+            nextViewController.isMyBlog = false
+            
+            nextViewController.bbuserid = self.bbuserid
+            nextViewController.bbusername = self.bbusername
+            nextViewController.bbpassword = self.bbpassword
+            nextViewController.jurl = self.jurl
             
             self.present(nextViewController, animated: true)
             

@@ -128,8 +128,15 @@ class FavoritesListController: UIViewController {
             nextViewController.modalPresentationStyle = .fullScreen
                 nextViewController.rssString = rssString
             nextViewController.nick = selectedFriend.nick!
+            nextViewController.isMyBlog = false
+            
+            nextViewController.bbusername = self.bbusername
+            nextViewController.bbuserid = self.bbuserid
+            nextViewController.bbpassword = self.bbpassword
+            nextViewController.jurl = self.jurl
             
             self.present(nextViewController, animated: true)
+            
             
             
             

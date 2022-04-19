@@ -26,6 +26,9 @@
 		1BBAD77027CD0C490058DF7D /* FriendPostsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD76F27CD0C480058DF7D /* FriendPostsController.swift */; };
 		1BBAD77327CD1CE20058DF7D /* RssCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBAD77227CD1CE20058DF7D /* RssCell.xib */; };
 		1BBAD77527CD1D230058DF7D /* RssCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD77427CD1D230058DF7D /* RssCellClass.swift */; };
+		1BD3383127E8D3F100727676 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3383027E8D3F100727676 /* CommentViewController.swift */; };
+		1BD3383327F483FE00727676 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD3383227F483FE00727676 /* CommentCell.xib */; };
+		1BD3383527F4861B00727676 /* CommentCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3383427F4861B00727676 /* CommentCellClass.swift */; };
 		1BFEC9BB27A5B896005C2FF5 /* URLQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEC9BA27A5B896005C2FF5 /* URLQuery.swift */; };
 		1BFEC9BD27A6D28A005C2FF5 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEC9BC27A6D28A005C2FF5 /* PostViewController.swift */; };
 		1BFEC9BF27B17E43005C2FF5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEC9BE27B17E42005C2FF5 /* Constants.swift */; };
@@ -54,6 +57,9 @@
 		1BBAD76F27CD0C480058DF7D /* FriendPostsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPostsController.swift; sourceTree = "<group>"; };
 		1BBAD77227CD1CE20058DF7D /* RssCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RssCell.xib; sourceTree = "<group>"; };
 		1BBAD77427CD1D230058DF7D /* RssCellClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssCellClass.swift; sourceTree = "<group>"; };
+		1BD3383027E8D3F100727676 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		1BD3383227F483FE00727676 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		1BD3383427F4861B00727676 /* CommentCellClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellClass.swift; sourceTree = "<group>"; };
 		1BFEC9BA27A5B896005C2FF5 /* URLQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLQuery.swift; sourceTree = "<group>"; };
 		1BFEC9BC27A6D28A005C2FF5 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		1BFEC9BE27B17E42005C2FF5 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -113,6 +119,7 @@
 				1BBAD75927BC07880058DF7D /* Model.xcdatamodeld */,
 				1BBAD76827CCC2BD0058DF7D /* FavoritesListController.swift */,
 				1BBAD76F27CD0C480058DF7D /* FriendPostsController.swift */,
+				1BD3383027E8D3F100727676 /* CommentViewController.swift */,
 			);
 			path = LiruIos;
 			sourceTree = "<group>";
@@ -150,6 +157,8 @@
 			children = (
 				1BBAD77227CD1CE20058DF7D /* RssCell.xib */,
 				1BBAD77427CD1D230058DF7D /* RssCellClass.swift */,
+				1BD3383227F483FE00727676 /* CommentCell.xib */,
+				1BD3383427F4861B00727676 /* CommentCellClass.swift */,
 			);
 			path = RssCell;
 			sourceTree = "<group>";
@@ -231,6 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BD3383327F483FE00727676 /* CommentCell.xib in Resources */,
 				1BBAD77327CD1CE20058DF7D /* RssCell.xib in Resources */,
 				1B0CAFB627A1953D007CF2FD /* LaunchScreen.storyboard in Resources */,
 				1B0CAFB327A1953D007CF2FD /* Assets.xcassets in Resources */,
@@ -293,6 +303,7 @@
 				1BBAD75827BA931C0058DF7D /* FriendsXMLModel.swift in Sources */,
 				1BBAD75F27BC07C60058DF7D /* Friend+CoreDataClass.swift in Sources */,
 				1BFEC9BD27A6D28A005C2FF5 /* PostViewController.swift in Sources */,
+				1BD3383527F4861B00727676 /* CommentCellClass.swift in Sources */,
 				1BBAD76B27CCD5220058DF7D /* RSSXMLModel.swift in Sources */,
 				1BBAD75E27BC07C60058DF7D /* Friend+CoreDataProperties.swift in Sources */,
 				1B0CAFAE27A19538007CF2FD /* ViewController.swift in Sources */,
@@ -305,6 +316,7 @@
 				1BBAD75B27BC07880058DF7D /* Model.xcdatamodeld in Sources */,
 				1B0CAFAC27A19538007CF2FD /* SceneDelegate.swift in Sources */,
 				1BFEC9BB27A5B896005C2FF5 /* URLQuery.swift in Sources */,
+				1BD3383127E8D3F100727676 /* CommentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

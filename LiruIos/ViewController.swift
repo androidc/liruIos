@@ -10,6 +10,7 @@ import Alamofire
 
 class ViewController: UIViewController {
     
+  
     private var userName:String = ""
     private var pass:String = ""
     var changeUserFlag:Bool = false
@@ -23,8 +24,7 @@ class ViewController: UIViewController {
     
    // var userNameObserver: NSKeyValueObservation?
    // var userPassObserver: NSKeyValueObservation?
-    
-    
+
     private func ud_init() -> (Bool) {
         
         ud_userName = UserDefaults.standard.string(forKey: Keys.userName)

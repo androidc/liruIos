@@ -37,6 +37,9 @@
                         <buttonConfiguration key="configuration" style="gray" title="комментировать">
                             <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                         </buttonConfiguration>
+                        <connections>
+                            <action selector="didTapButton" destination="KN5-w3-yX3" eventType="touchUpInside" id="OY7-ZK-zpE"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -56,7 +59,7 @@
                 <bool key="isElement" value="YES"/>
             </accessibility>
             <connections>
-                <outlet property="CommentButton" destination="jNG-rk-ct2" id="ceZ-qH-ypm"/>
+                <outlet property="CommentButton" destination="jNG-rk-ct2" id="hsc-gY-kpq"/>
                 <outlet property="Header" destination="sj8-X2-6Gi" id="8Wn-3z-s0w"/>
                 <outlet property="webView" destination="8wR-Gb-zcq" id="TLF-pq-gXB"/>
             </connections>

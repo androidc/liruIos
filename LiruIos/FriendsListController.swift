@@ -111,6 +111,7 @@ class FriendsListController: UIViewController {
                     }
                    
                     friend.name = fr.foaf?.name
+                
                 }
                 if fr.Group != nil {
                     friend.url = fr.Group?.weblog?.resource
