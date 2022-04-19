@@ -11,5 +11,5 @@ import CoreData
 
 @objc(FavoritesModel)
 public class FavoritesModel: NSManagedObject {
-
+  
 }

@@ -20,5 +20,5 @@ extension FavoritesModel {
     @NSManaged public var name: String?
     @NSManaged public var nick: String?
     @NSManaged public var url: String?
-
+  
 }

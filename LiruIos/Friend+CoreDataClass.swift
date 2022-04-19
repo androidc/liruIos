@@ -11,5 +11,5 @@ import CoreData
 
 @objc(FriendModel)
 public class FriendModel: NSManagedObject {
-
+  
 }
