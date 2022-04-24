@@ -98,10 +98,10 @@ extension FriendPostsController:UITableViewDataSource {
       //  cell?.webView.loadHTMLString(posts?.channel?.item![indexPath.row].description.win1251EncodedWithSpace.removingPercentEncoding ?? "", baseURL: URL(string: (post?.link)!))
         
         if  let comments = post?.comments {
-            cell?.configure(with: "Комментировать(\(comments))",link:(post?.link)!)
+            cell?.configure(with: "Комментировать(\(comments))",link:(post?.link)!,header: (post?.title)!)
            // cell?.CommentButton.titleLabel?.text = "Комментировать(\(comments))"
         } else
-        {   cell?.configure(with: "Комментировать(0)",link:(post?.link)!)
+        {   cell?.configure(with: "Комментировать(0)",link:(post?.link)!,header: (post?.title)!)
            // cell?.CommentButton.titleLabel?.text = "Комментировать(0)"
         }
         
@@ -225,7 +225,7 @@ extension String {
 }
 
 extension FriendPostsController: MyTableViewCellDelegate {
-    func didTapButton(with link: String) {
+    func didTapButton(with link: String, header: String) {
        //print(link)
     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "cmvc") as! CommentViewController
@@ -233,10 +233,13 @@ extension FriendPostsController: MyTableViewCellDelegate {
     nextViewController.bbusername = self.bbusername
     nextViewController.bbuserid = self.bbuserid
     nextViewController.bbusername = self.bbusername
+        nextViewController.bbpassword = self.bbpassword
     nextViewController.jurl = self.jurl
-        print("\(link)rss")
+        //print("\(link)rss")
         self.GetRssWithCompletion(url: URL(string: "\(link)rss")!) { rssCommentString in
             nextViewController.rssString = rssCommentString
+            nextViewController.link = link
+            nextViewController.postHeader = header
             //
             self.present(nextViewController, animated:true, completion:nil)
         }

@@ -440,6 +440,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headerInput" destination="bqj-O2-Emi" id="hg1-JX-5ME"/>
+                        <outlet property="messageInput" destination="Q68-CC-A2t" id="eVJ-lf-Jsc"/>
                         <outlet property="navTitle" destination="fGk-d4-eZT" id="8aK-NC-jrL"/>
                         <outlet property="tableView" destination="gxd-ln-9Qa" id="uEw-Nz-ZjW"/>
                     </connections>
