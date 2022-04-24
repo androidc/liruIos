@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="321" id="TJ9-B9-aof" customClass="CommentCellWithWebView" customModule="LiruIos">
+            <rect key="frame" x="0.0" y="0.0" width="755" height="321"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TJ9-B9-aof" id="7k2-KG-ksz">
+                <rect key="frame" x="0.0" y="0.0" width="755" height="321"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LwE-Yl-1ia">
+                        <rect key="frame" x="5" y="113" width="745" height="203"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <wkWebViewConfiguration key="configuration">
+                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                            <wkPreferences key="preferences"/>
+                        </wkWebViewConfiguration>
+                    </wkWebView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMU-Zt-FMn">
+                        <rect key="frame" x="10" y="26" width="735" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Заголовок комментария" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9Q-e2-MLm">
+                        <rect key="frame" x="20" y="55" width="730" height="50"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="s0J-E1-XMQ"/>
+                        </constraints>
+                        <color key="textColor" systemColor="labelColor"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="XMU-Zt-FMn" secondAttribute="trailing" constant="10" id="hcS-LM-QuI"/>
+                    <constraint firstItem="r9Q-e2-MLm" firstAttribute="top" secondItem="XMU-Zt-FMn" secondAttribute="bottom" constant="8" symbolic="YES" id="kFt-MF-S1u"/>
+                    <constraint firstItem="XMU-Zt-FMn" firstAttribute="leading" secondItem="7k2-KG-ksz" secondAttribute="leading" constant="10" id="q6k-Qk-QK0"/>
+                    <constraint firstAttribute="trailing" secondItem="r9Q-e2-MLm" secondAttribute="trailing" constant="5" id="wt4-kf-ZAi"/>
+                    <constraint firstItem="r9Q-e2-MLm" firstAttribute="leading" secondItem="7k2-KG-ksz" secondAttribute="leading" constant="20" symbolic="YES" id="xOH-Rd-8QT"/>
+                    <constraint firstItem="XMU-Zt-FMn" firstAttribute="top" secondItem="7k2-KG-ksz" secondAttribute="top" constant="26" id="y2e-V9-vlY"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="Author" destination="XMU-Zt-FMn" id="FlA-VA-7xw"/>
+                <outlet property="Header" destination="r9Q-e2-MLm" id="RQG-CG-rm5"/>
+                <outlet property="webView" destination="LwE-Yl-1ia" id="we7-uy-JaH"/>
+            </connections>
+            <point key="canvasLocation" x="36.956521739130437" y="-364.62053571428572"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

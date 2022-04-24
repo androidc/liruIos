@@ -26,6 +26,7 @@ class CommentViewController: UIViewController {
 
     
     let commentCell = "CommentCell"
+    let commentCellWithWebView = "CommentCellWithWebView"
     
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -137,10 +138,10 @@ class CommentViewController: UIViewController {
             "journalid":jid,
             "jpostid":pid,
             "jcommid": commID,
-            "commentsubscribe":"yes",
+            "commentsubscribe":"yes", // todo
             "isshow":"0",
             "dopostlink":"0",
-            "dolike":"0",
+            "dolike":"0", // todo
             "parseurl":"yes",
             "close_level":"0",
             "headerofpost": headerInput.text as! String,
@@ -223,7 +224,10 @@ class CommentViewController: UIViewController {
             tableView.rowHeight = 200
             tableView.dataSource = self
             tableView.delegate = self
-            tableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: commentCell)
+            tableView.register(UINib(nibName: "CommentCellWithWebView", bundle: nil), forCellReuseIdentifier: commentCellWithWebView)
+           // tableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: commentCell)
+          //  tableView.register(UINib(nibName: "CommentCellWithWebView", bundle: nil), forCellReuseIdentifier: commentCellWithWebView)
+            
         } else
         {
             
@@ -245,7 +249,7 @@ extension CommentViewController:UITableViewDataSource,UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: commentCell) as? CommentCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: commentCellWithWebView) as? CommentCellWithWebView
         let post = posts?.channel?.item![indexPath.row]
        
         let header_enc = post?.description?.data(using: String.Encoding.win1251)
@@ -253,13 +257,18 @@ extension CommentViewController:UITableViewDataSource,UITableViewDelegate {
         
         let desc_enc = NSString(data:header_enc!,encoding: String.Encoding.utf8.rawValue) as! String
         
-        cell?.Author.text = post?.author
+        let author_enc = post?.author.data(using: String.Encoding.win1251)
         
+        
+        cell?.Author.text = NSString(data:author_enc!,encoding: String.Encoding.utf8.rawValue) as! String
+        
+        
+    
         let textArr = desc_enc.components(separatedBy: "|")
         
         cell?.Header.text = textArr[0]
-        cell?.Comment.text = textArr[1]
-        
+        //cell?.Comment.text = textArr[1]
+        cell?.webView.loadHTMLString(textArr[1] ?? "", baseURL: nil)
        
 //        cell?.Header.text = NSString(data:header_enc!,encoding: String.Encoding.utf8.rawValue) as String?
 //        let desc = post?.description

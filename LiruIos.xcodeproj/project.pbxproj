@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B0243632815E9D9008E80BB /* CommentCellWithWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B0243622815E9D9008E80BB /* CommentCellWithWebView.xib */; };
+		1B0243652815EB20008E80BB /* CommentCellWithWebViewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0243642815EB20008E80BB /* CommentCellWithWebViewClass.swift */; };
 		1B0CAFAA27A19538007CF2FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0CAFA927A19538007CF2FD /* AppDelegate.swift */; };
 		1B0CAFAC27A19538007CF2FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0CAFAB27A19538007CF2FD /* SceneDelegate.swift */; };
 		1B0CAFAE27A19538007CF2FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0CAFAD27A19538007CF2FD /* ViewController.swift */; };
@@ -36,6 +38,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B0243622815E9D9008E80BB /* CommentCellWithWebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCellWithWebView.xib; sourceTree = "<group>"; };
+		1B0243642815EB20008E80BB /* CommentCellWithWebViewClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellWithWebViewClass.swift; sourceTree = "<group>"; };
 		1B0CAFA627A19538007CF2FD /* LiruIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiruIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0CAFA927A19538007CF2FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B0CAFAB27A19538007CF2FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 				1BBAD77427CD1D230058DF7D /* RssCellClass.swift */,
 				1BD3383227F483FE00727676 /* CommentCell.xib */,
 				1BD3383427F4861B00727676 /* CommentCellClass.swift */,
+				1B0243622815E9D9008E80BB /* CommentCellWithWebView.xib */,
+				1B0243642815EB20008E80BB /* CommentCellWithWebViewClass.swift */,
 			);
 			path = RssCell;
 			sourceTree = "<group>";
@@ -245,6 +251,7 @@
 				1B0CAFB627A1953D007CF2FD /* LaunchScreen.storyboard in Resources */,
 				1B0CAFB327A1953D007CF2FD /* Assets.xcassets in Resources */,
 				1B0CAFB127A19538007CF2FD /* Main.storyboard in Resources */,
+				1B0243632815E9D9008E80BB /* CommentCellWithWebView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +310,7 @@
 				1BBAD75827BA931C0058DF7D /* FriendsXMLModel.swift in Sources */,
 				1BBAD75F27BC07C60058DF7D /* Friend+CoreDataClass.swift in Sources */,
 				1BFEC9BD27A6D28A005C2FF5 /* PostViewController.swift in Sources */,
+				1B0243652815EB20008E80BB /* CommentCellWithWebViewClass.swift in Sources */,
 				1BD3383527F4861B00727676 /* CommentCellClass.swift in Sources */,
 				1BBAD76B27CCD5220058DF7D /* RSSXMLModel.swift in Sources */,
 				1BBAD75E27BC07C60058DF7D /* Friend+CoreDataProperties.swift in Sources */,
