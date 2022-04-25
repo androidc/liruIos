@@ -371,22 +371,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="заголовок комментария" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bqj-O2-Emi">
-                                <rect key="frame" x="20" y="521" width="374" height="34"/>
+                                <rect key="frame" x="20" y="442" width="374" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="&gt;" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q68-CC-A2t">
-                                <rect key="frame" x="10" y="583" width="394" height="179"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="179" id="tnP-fz-2Yq"/>
-                                </constraints>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v8q-ey-A7J">
-                                <rect key="frame" x="100" y="796" width="214" height="31"/>
+                                <rect key="frame" x="100" y="826" width="214" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="Отправить"/>
                                 <connections>
@@ -394,7 +384,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="gxd-ln-9Qa">
-                                <rect key="frame" x="10" y="173" width="394" height="338"/>
+                                <rect key="frame" x="10" y="94" width="394" height="338"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="338" id="jfe-MZ-Bug"/>
@@ -418,29 +408,59 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7T-5L-E21">
+                                <rect key="frame" x="38" y="770" width="74.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Скрыть"/>
+                                <connections>
+                                    <action selector="hideButtonAction:" destination="31M-hy-Z0t" eventType="touchUpInside" id="G7e-1u-EEw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqH-Tw-cay">
+                                <rect key="frame" x="156" y="770" width="57.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Лайк"/>
+                                <connections>
+                                    <action selector="likeButtonAction:" destination="31M-hy-Z0t" eventType="touchUpInside" id="9Xx-T3-Bdd"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Q68-CC-A2t">
+                                <rect key="frame" x="10" y="497" width="394" height="265"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="v8p-tf-b5C"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Q68-CC-A2t" firstAttribute="top" secondItem="bqj-O2-Emi" secondAttribute="bottom" constant="21" id="1m8-uV-pNt"/>
                             <constraint firstItem="v8p-tf-b5C" firstAttribute="trailing" secondItem="v8q-ey-A7J" secondAttribute="trailing" constant="100" id="3dn-Vv-Gze"/>
-                            <constraint firstItem="v8p-tf-b5C" firstAttribute="bottom" secondItem="v8q-ey-A7J" secondAttribute="bottom" constant="35" id="8mh-op-pZ0"/>
+                            <constraint firstItem="v8p-tf-b5C" firstAttribute="bottom" secondItem="v8q-ey-A7J" secondAttribute="bottom" constant="5" id="8mh-op-pZ0"/>
                             <constraint firstItem="v8p-tf-b5C" firstAttribute="trailing" secondItem="ngL-U9-JP3" secondAttribute="trailing" id="EvA-Sw-QBW"/>
                             <constraint firstItem="v8p-tf-b5C" firstAttribute="trailing" secondItem="Q68-CC-A2t" secondAttribute="trailing" constant="10" id="FLh-u9-T51"/>
                             <constraint firstItem="ngL-U9-JP3" firstAttribute="top" secondItem="v8p-tf-b5C" secondAttribute="top" id="H5Z-pQ-sfb"/>
+                            <constraint firstItem="K7T-5L-E21" firstAttribute="leading" secondItem="v8p-tf-b5C" secondAttribute="leading" constant="38" id="HfR-jV-Kta"/>
                             <constraint firstItem="v8p-tf-b5C" firstAttribute="trailing" secondItem="bqj-O2-Emi" secondAttribute="trailing" constant="20" id="NAQ-fs-0pN"/>
                             <constraint firstItem="bqj-O2-Emi" firstAttribute="leading" secondItem="v8p-tf-b5C" secondAttribute="leading" constant="20" id="UAO-lZ-hjx"/>
-                            <constraint firstItem="Q68-CC-A2t" firstAttribute="top" secondItem="bqj-O2-Emi" secondAttribute="bottom" constant="28" id="ZRE-uH-i0y"/>
-                            <constraint firstItem="v8p-tf-b5C" firstAttribute="bottom" secondItem="Q68-CC-A2t" secondAttribute="bottom" constant="100" id="awX-SF-LgP"/>
+                            <constraint firstItem="v8p-tf-b5C" firstAttribute="bottom" secondItem="Q68-CC-A2t" secondAttribute="bottom" constant="100" id="XsU-Ld-j4U"/>
                             <constraint firstItem="v8q-ey-A7J" firstAttribute="leading" secondItem="v8p-tf-b5C" secondAttribute="leading" constant="100" id="bMf-ig-jfj"/>
+                            <constraint firstItem="aqH-Tw-cay" firstAttribute="leading" secondItem="v8p-tf-b5C" secondAttribute="leading" constant="156" id="bq6-h4-Xdl"/>
                             <constraint firstItem="bqj-O2-Emi" firstAttribute="top" secondItem="gxd-ln-9Qa" secondAttribute="bottom" constant="10" id="cGe-4X-JnL"/>
+                            <constraint firstItem="gxd-ln-9Qa" firstAttribute="top" secondItem="v8p-tf-b5C" secondAttribute="top" constant="50" id="gnm-NI-dBo"/>
                             <constraint firstItem="v8p-tf-b5C" firstAttribute="trailing" secondItem="gxd-ln-9Qa" secondAttribute="trailing" constant="10" id="hgA-AP-dKO"/>
+                            <constraint firstItem="v8p-tf-b5C" firstAttribute="bottom" secondItem="aqH-Tw-cay" secondAttribute="bottom" constant="61" id="iqf-nr-E46"/>
                             <constraint firstItem="Q68-CC-A2t" firstAttribute="leading" secondItem="v8p-tf-b5C" secondAttribute="leading" constant="10" id="oUu-c4-DHP"/>
+                            <constraint firstItem="v8p-tf-b5C" firstAttribute="bottom" secondItem="K7T-5L-E21" secondAttribute="bottom" constant="61" id="pbe-uT-Zdd"/>
                             <constraint firstItem="gxd-ln-9Qa" firstAttribute="leading" secondItem="v8p-tf-b5C" secondAttribute="leading" constant="10" id="q9U-k2-ZVi"/>
                             <constraint firstItem="ngL-U9-JP3" firstAttribute="leading" secondItem="v8p-tf-b5C" secondAttribute="leading" id="wKg-5U-8Uq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="headerInput" destination="bqj-O2-Emi" id="hg1-JX-5ME"/>
+                        <outlet property="hideButtonCheckBox" destination="K7T-5L-E21" id="FzX-dS-XEw"/>
+                        <outlet property="likeButtonCheckBox" destination="aqH-Tw-cay" id="M72-tu-xCe"/>
                         <outlet property="messageInput" destination="Q68-CC-A2t" id="eVJ-lf-Jsc"/>
                         <outlet property="navTitle" destination="fGk-d4-eZT" id="8aK-NC-jrL"/>
                         <outlet property="tableView" destination="gxd-ln-9Qa" id="uEw-Nz-ZjW"/>

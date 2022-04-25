@@ -23,6 +23,8 @@ class CommentViewController: UIViewController {
     var ctitle = ""
     var postHeader = ""
     var selectedComment = ""
+    var dolike:Bool = false
+    var hide:Bool = false
 
     
     let commentCell = "CommentCell"
@@ -43,6 +45,7 @@ class CommentViewController: UIViewController {
         
     }
     
+  
     @IBOutlet weak var navTitle: UINavigationItem!
     @IBOutlet weak var tableView: UITableView!
     
@@ -50,7 +53,38 @@ class CommentViewController: UIViewController {
     
     @IBOutlet weak var messageInput: UITextView!
     
+    @IBOutlet weak var likeButtonCheckBox: UIButton! {
+        didSet{
+            likeButtonCheckBox.setImage(UIImage(systemName:"checkmark.seal"), for: .normal)
+            likeButtonCheckBox.setImage(UIImage(systemName:"checkmark.seal.fill"), for: .selected)
+                   //Set corner radius
+            likeButtonCheckBox.layer.cornerRadius = hideButtonCheckBox.frame.height / 2
+               }
+    }
     
+    @IBAction func likeButtonAction(_ sender: UIButton) {
+        sender.checkboxAnimation {
+                 
+            self.dolike =  sender.isSelected
+                  
+              }
+    }
+    @IBAction func hideButtonAction(_ sender: UIButton) {
+        sender.checkboxAnimation {
+                
+            self.hide =   sender.isSelected
+                  
+              }
+    }
+    
+    @IBOutlet weak var hideButtonCheckBox: UIButton! {
+        didSet{
+            hideButtonCheckBox.setImage(UIImage(systemName:"checkmark.seal"), for: .normal)
+            hideButtonCheckBox.setImage(UIImage(systemName:"checkmark.seal.fill"), for: .selected)
+                   //Set corner radius
+            hideButtonCheckBox.layer.cornerRadius = hideButtonCheckBox.frame.height / 2
+               }
+    }
     
     private func createSuccessAlert() -> UIAlertController {
             let alert = UIAlertController (
@@ -85,6 +119,24 @@ class CommentViewController: UIViewController {
         let commlink = link_components.last!
         return commlink.replacingOccurrences(of: "#BlCom", with: "")
     }
+    
+    private func doLikeCode(dolike:Bool) -> String {
+        if (dolike) {
+            return "1"
+        }
+        else {return "0"}
+    }
+    
+    private func doHideCode(hide:Bool) -> String {
+        if (hide) {
+            return "1"
+        }
+        else {
+            return "0"
+        }
+    }
+    
+   
     
     // необходимые данные для комментария
     // journalid : channel - image - url
@@ -122,9 +174,14 @@ class CommentViewController: UIViewController {
             return
         }
         
-        guard let pid = getPid((source.channel?.link)!) else {
-            return
+       
+        var pid = ""
+        if (self.link == source.channel?.link) {
+            pid = getPid((source.channel?.link)!)!
+        } else {
+            pid = getPid(self.link)!
         }
+         
         
         var commID = ""
         if selectedComment != "" {
@@ -134,14 +191,16 @@ class CommentViewController: UIViewController {
             commID = commId
         }
         
-        var parameters:Dictionary = [
+        
+        
+        let parameters:Dictionary = [
             "journalid":jid,
             "jpostid":pid,
             "jcommid": commID,
-            "commentsubscribe":"yes", // todo
-            "isshow":"0",
+            "commentsubscribe":"yes",
+            "isshow":doHideCode(hide: self.hide),
             "dopostlink":"0",
-            "dolike":"0", // todo
+            "dolike":doLikeCode(dolike: self.dolike),
             "parseurl":"yes",
             "close_level":"0",
             "headerofpost": headerInput.text as! String,
@@ -196,7 +255,8 @@ class CommentViewController: UIViewController {
         
     }
     
-
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -214,6 +274,9 @@ class CommentViewController: UIViewController {
       //  print("CCCCCCCCCCC")
         print(rssString)
         
+        messageInput.layer.borderWidth = 3
+        messageInput.layer.borderColor = UIColor.darkGray.cgColor
+        
         self.posts = XMLMapper<RSS>().map(XMLString: rssString.replacingOccurrences(of: "И", with: "и"))
         
         if (self.link == posts?.channel?.link) {
@@ -225,6 +288,7 @@ class CommentViewController: UIViewController {
             tableView.dataSource = self
             tableView.delegate = self
             tableView.register(UINib(nibName: "CommentCellWithWebView", bundle: nil), forCellReuseIdentifier: commentCellWithWebView)
+            
            // tableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: commentCell)
           //  tableView.register(UINib(nibName: "CommentCellWithWebView", bundle: nil), forCellReuseIdentifier: commentCellWithWebView)
             
@@ -262,18 +326,18 @@ extension CommentViewController:UITableViewDataSource,UITableViewDelegate {
         
         cell?.Author.text = NSString(data:author_enc!,encoding: String.Encoding.utf8.rawValue) as! String
         
-        
-    
         let textArr = desc_enc.components(separatedBy: "|")
         
         cell?.Header.text = textArr[0]
         //cell?.Comment.text = textArr[1]
-        cell?.webView.loadHTMLString(textArr[1] ?? "", baseURL: nil)
+        let headerString = "<head><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no'></head>"
+        
+        let comm = textArr[1] as! String
+        let comm_replaced = comm.replacingOccurrences(of: "//i.li.ru", with: "https://i.li.ru")
        
-//        cell?.Header.text = NSString(data:header_enc!,encoding: String.Encoding.utf8.rawValue) as String?
-//        let desc = post?.description
-//        let desc_enc = desc?.data(using: String.Encoding.win1251)
-//       let desc_utf = NSString(data:desc_enc!,encoding: String.Encoding.utf8.rawValue) as String?
+        cell?.webView.loadHTMLString(headerString+comm_replaced ?? "", baseURL: nil)
+       
+
 
 
         return cell ?? UITableViewCell()
@@ -288,4 +352,26 @@ extension CommentViewController:UITableViewDataSource,UITableViewDelegate {
       
      }
     
+}
+
+extension UIButton {
+    //MARK:- Animate check mark
+    func checkboxAnimation(closure: @escaping () -> Void){
+        guard let image = self.imageView else {return}
+        self.adjustsImageWhenHighlighted = false
+        self.isHighlighted = false
+        
+        UIView.animate(withDuration: 0.1, delay: 0.1, options: .curveLinear, animations: {
+            image.transform = CGAffineTransform(scaleX: 0.8, y: 0.8)
+            
+        }) { (success) in
+            UIView.animate(withDuration: 0.1, delay: 0, options: .curveLinear, animations: {
+                self.isSelected = !self.isSelected
+                //to-do
+                closure()
+                image.transform = .identity
+            }, completion: nil)
+        }
+        
+    }
 }

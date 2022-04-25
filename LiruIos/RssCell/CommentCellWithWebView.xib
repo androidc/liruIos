@@ -16,9 +16,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="755" height="321"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LwE-Yl-1ia">
-                        <rect key="frame" x="5" y="113" width="745" height="203"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LwE-Yl-1ia">
+                        <rect key="frame" x="5" y="70" width="745" height="246"/>
                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <wkWebViewConfiguration key="configuration">
                             <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -26,16 +25,16 @@
                         </wkWebViewConfiguration>
                     </wkWebView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XMU-Zt-FMn">
-                        <rect key="frame" x="10" y="26" width="735" height="21"/>
+                        <rect key="frame" x="10" y="10" width="735" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Заголовок комментария" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r9Q-e2-MLm">
-                        <rect key="frame" x="20" y="55" width="730" height="50"/>
+                        <rect key="frame" x="20" y="39" width="730" height="20"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="50" id="s0J-E1-XMQ"/>
+                            <constraint firstAttribute="height" constant="20" id="s0J-E1-XMQ"/>
                         </constraints>
                         <color key="textColor" systemColor="labelColor"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -43,12 +42,16 @@
                     </textView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="LwE-Yl-1ia" firstAttribute="top" secondItem="7k2-KG-ksz" secondAttribute="top" constant="70" id="UvS-gC-SRZ"/>
+                    <constraint firstAttribute="trailing" secondItem="LwE-Yl-1ia" secondAttribute="trailing" constant="5" id="crx-ca-Jy4"/>
+                    <constraint firstItem="LwE-Yl-1ia" firstAttribute="leading" secondItem="7k2-KG-ksz" secondAttribute="leading" constant="5" id="eLu-j5-4zw"/>
                     <constraint firstAttribute="trailing" secondItem="XMU-Zt-FMn" secondAttribute="trailing" constant="10" id="hcS-LM-QuI"/>
                     <constraint firstItem="r9Q-e2-MLm" firstAttribute="top" secondItem="XMU-Zt-FMn" secondAttribute="bottom" constant="8" symbolic="YES" id="kFt-MF-S1u"/>
                     <constraint firstItem="XMU-Zt-FMn" firstAttribute="leading" secondItem="7k2-KG-ksz" secondAttribute="leading" constant="10" id="q6k-Qk-QK0"/>
+                    <constraint firstAttribute="bottom" secondItem="LwE-Yl-1ia" secondAttribute="bottom" constant="5" id="r9a-hl-nlI"/>
                     <constraint firstAttribute="trailing" secondItem="r9Q-e2-MLm" secondAttribute="trailing" constant="5" id="wt4-kf-ZAi"/>
                     <constraint firstItem="r9Q-e2-MLm" firstAttribute="leading" secondItem="7k2-KG-ksz" secondAttribute="leading" constant="20" symbolic="YES" id="xOH-Rd-8QT"/>
-                    <constraint firstItem="XMU-Zt-FMn" firstAttribute="top" secondItem="7k2-KG-ksz" secondAttribute="top" constant="26" id="y2e-V9-vlY"/>
+                    <constraint firstItem="XMU-Zt-FMn" firstAttribute="top" secondItem="7k2-KG-ksz" secondAttribute="top" constant="10" id="y2e-V9-vlY"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>

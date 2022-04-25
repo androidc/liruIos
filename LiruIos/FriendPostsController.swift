@@ -105,6 +105,8 @@ extension FriendPostsController:UITableViewDataSource {
            // cell?.CommentButton.titleLabel?.text = "Комментировать(0)"
         }
         
+        
+        
         cell?.webView.loadHTMLString(desc_utf ?? "", baseURL: nil)
         
         cell?.delegate = self

@@ -18,6 +18,16 @@ class CommentCellWithWebView:UITableViewCell {
     
     @IBOutlet weak var Author: UILabel!
     
+    override func awakeFromNib() {
+    super.awakeFromNib()
+
+    //textFieldCell.layer.borderColor = UIColor.orange.cgColor
+    self.layer.borderWidth = 3
+    self.layer.borderColor = UIColor.orange.cgColor
+        
+    
+
+    }
     
     
 }
