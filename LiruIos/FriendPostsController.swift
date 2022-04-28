@@ -39,7 +39,7 @@ class FriendPostsController: UIViewController {
         CustomTitle.title = nick
         
         tableView.dataSource = self
-        tableView.rowHeight = 300
+        tableView.rowHeight = 600
         
         // разбор rssString
        //print(rssString)
@@ -84,6 +84,8 @@ extension FriendPostsController:UITableViewDataSource {
         posts?.channel?.item?.count ?? 0
     }
     
+ 
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: rssCell) as? RssCell
         let post = posts?.channel?.item![indexPath.row]
@@ -105,57 +107,13 @@ extension FriendPostsController:UITableViewDataSource {
            // cell?.CommentButton.titleLabel?.text = "Комментировать(0)"
         }
         
+        let headerString = "<head><meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes'></head>"
         
-        
-        cell?.webView.loadHTMLString(desc_utf ?? "", baseURL: nil)
+        cell?.webView.loadHTMLString(headerString+(desc_utf?.HTMLImageCorrector())!, baseURL: nil)
         
         cell?.delegate = self
         
- 
-       // Optional("https://www.liveinternet.ru/users/2125404/post491267365/")
-      //  Optional("https://www.liveinternet.ru/users/chert/post491267390/")
-        
-        // try jid = 2125404 or chert
-        // try pid = 491267390
-     
-//        cell?.CommentButton.addAction(UIAction(title: "",  handler: {action in
-//
-//            print(post?.link)
-           
-            // добавить вызов контроллера с передачей всех необходимых данных для
-            // комментирования
-            //print(post?.link)
-            
-//            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-//            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "cmvc") as! CommentViewController
-//            nextViewController.modalPresentationStyle = .fullScreen
-//            nextViewController.bbusername = self.bbusername
-//            nextViewController.bbuserid = self.bbuserid
-//            nextViewController.bbusername = self.bbusername
-//            nextViewController.jurl = self.jurl
-//
-//            let link = (post?.link)!
-//
-//            self.GetRssWithCompletion(url: URL(string: "\(link)rss")!) { rssCommentString in
-//
-//                nextViewController.rssString = rssCommentString
-//
-//                self.present(nextViewController, animated:true, completion:nil)
-//            }
-            
-            
-            
-//
-//        }), for: .touchUpInside)
-//
-    
-//        cell?.descriptionTv.text = posts?.channel?.item![indexPath.row].description.win1251EncodedWithSpace.removingPercentEncoding
-    //    print(posts?.channel?.item![indexPath.row].description.win1251EncodedWithSpace.removingPercentEncoding)
-//        print(posts?.channel?.item![indexPath.row].description.win1251Encoded.removingPercentEncoding ?? "")
-//        var desc = posts?.channel?.item![indexPath.row].description.win1251Encoded.removingPercentEncoding ?? ""
-//        desc = "<!DOCTYPE html><html><body>\(desc.replacingOccurrences(of: "+", with: " "))</body></html>"
-//        print(desc)
-//        cell?.webView.loadHTMLString(desc, baseURL: nil)
+
        
         return cell ?? UITableViewCell()
        
@@ -250,4 +208,25 @@ extension FriendPostsController: MyTableViewCellDelegate {
     }
     
     
+}
+
+
+extension String {
+
+func HTMLImageCorrector() -> String {
+    var HTMLToBeReturned = self
+    while HTMLToBeReturned.range(of: "(?<=width=\")[^\" height]+", options: .regularExpression) != nil{
+        if let match = HTMLToBeReturned.range(of: "(?<=width=\")[^\" height]+", options: .regularExpression) {
+            HTMLToBeReturned.removeSubrange(match)
+            if let match2 = HTMLToBeReturned.range(of: "(?<=height=\")[^\"]+", options: .regularExpression) {
+                HTMLToBeReturned.removeSubrange(match2)
+                let string2del = "width=\"\" height=\"\""
+                HTMLToBeReturned = HTMLToBeReturned.replacingOccurrences(of: string2del, with: "style=\"width: 100%\"")
+            }
+        }
+
+    }
+
+    return HTMLToBeReturned
+}
 }

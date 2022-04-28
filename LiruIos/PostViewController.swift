@@ -35,6 +35,106 @@ class PostViewController: UIViewController {
     }
     
     
+    @IBAction func IButtonAction(_ sender: UIButton) {
+        
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Подчеркнутый текст", message: "Введите текст", preferredStyle: .alert)
+
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.text = ""
+        }
+
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            //print("Text field: \(textField!.text)")
+            self.TextView.text += "<i>\(textField!.text!)</i>"
+        }))
+
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func BButtonAction(_ sender: UIButton) {
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Жирный текст", message: "Введите текст", preferredStyle: .alert)
+
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.text = ""
+        }
+
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            //print("Text field: \(textField!.text)")
+            self.TextView.text += "<b>\(textField!.text!)</b>"
+        }))
+
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func MButtonAction(_ sender: UIButton) {
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Убрать под кат", message: "Введите текст", preferredStyle: .alert)
+
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.text = ""
+        }
+
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            //print("Text field: \(textField!.text)")
+            self.TextView.text += "[more=]\(textField!.text!)[/more]"
+        }))
+
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func MicroButtonAction(_ sender: UIButton) {
+        
+        sendMicroPost { status in
+           if (status == 200)
+            {
+               let alert = self.createSuccessMicroAlert()
+               self.present(alert, animated: true, completion: nil)
+              
+           } else {
+               
+               let alert = self.createErrorAlert()
+               self.present(alert, animated: true, completion: nil)
+             
+           }
+        }
+    }
+    
+    @IBAction func SButtonAction(_ sender: UIButton) {
+        
+        //1. Create the alert controller.
+        let alert = UIAlertController(title: "Зачеркнутый текст", message: "Введите текст", preferredStyle: .alert)
+
+        //2. Add the text field. You can configure it however you need.
+        alert.addTextField { (textField) in
+            textField.text = ""
+        }
+
+        // 3. Grab the value from the text field, and print it when the user clicks OK.
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+            //print("Text field: \(textField!.text)")
+            self.TextView.text += "<s>\(textField!.text!)</s>"
+        }))
+
+        // 4. Present the alert.
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func onDraftButton(_ sender: Any) {
         sendPostCP1251(url:URL(string: "http://www.liveinternet.ru/journal_addpost.php?doajax=1")!,draft: true, completion: {status,draft in
             if status == 200 {
@@ -80,6 +180,13 @@ class PostViewController: UIViewController {
         })
         
    
+        
+    }
+    
+    private func sendMicroPost(url: URL,completion: @escaping (_ status:Int) -> ()) {
+        
+       
+        
         
     }
     
@@ -178,10 +285,23 @@ class PostViewController: UIViewController {
             return alert
         }
     
+   
+    
     private func createSuccessAlert() -> UIAlertController {
             let alert = UIAlertController (
             title: "Успех",
             message: "Успешно отправлено в дневник",
+            preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title:"ok",style:.destructive,handler: nil))
+            
+            return alert
+        }
+    
+    private func createSuccessMicroAlert() -> UIAlertController {
+            let alert = UIAlertController (
+            title: "Успех",
+            message: "Успешно отправлено в микроблог",
             preferredStyle: .alert)
             
             alert.addAction(UIAlertAction(title:"ok",style:.destructive,handler: nil))
@@ -203,7 +323,34 @@ class PostViewController: UIViewController {
 
     
 
-    
+    private func sendMicroPost(completion: @escaping (_ status:Int) -> ()) {
+        
+        let requestURL:String = "https://www.liveinternet.ru/microblog.php?cmd=post";
+        
+        var parameters:Dictionary = [
+            "text":TextView.text as! String,
+            "encode":"utf"
+        ]
+        
+        var headers:HTTPHeaders = [
+        "Content-type":"application/x-www-form-urlencoded;charset=win-1251"]
+        headers["Cookie"] = "li-plug_top=closed; chbx=guest; jurl=" + jurl + "; ucss=normal; bbuserid=" + bbuserid + "; bbpassword=" + bbpassword + "; bbusername=" + bbusername
+        headers["Referer"] = "http://www.liveinternet.ru/users/" + bbusername + "/blog/"
+        headers["Accept-Encoding"] = "gzip,deflate,sdcn"
+        headers["Accept-Language"] = "ru,en;q=0.8"
+        headers["User-Agent"] = "Mozilla/5.0 (Windows NT 5.1)"
+        
+        AF.request(
+            requestURL,
+            method: .post,
+            parameters: parameters,
+            headers: headers
+        ).response { [weak self] response in
+         completion(response.response?.statusCode ?? 500)
+            
+        }
+        
+    }
     
     private func sendPost(draft:Bool) {
         
