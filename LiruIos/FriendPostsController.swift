@@ -93,9 +93,16 @@ extension FriendPostsController:UITableViewDataSource {
         let header_enc = post?.title?.data(using: String.Encoding.win1251)
        
         cell?.Header.text = NSString(data:header_enc!,encoding: String.Encoding.utf8.rawValue) as String?
-        let desc = post?.description
-        let desc_enc = desc?.data(using: String.Encoding.win1251)
-       let desc_utf = NSString(data:desc_enc!,encoding: String.Encoding.utf8.rawValue) as String?
+        var desc:String = (post?.description)!
+        // пакетная загрузка глючит если грузить с mac os, в img alt вставляет какую-то
+          // хню. из-за этого desc_enc = nil. нужно очищать <img alt...
+          // alt=\"Р РЋР Р…Р С‘Р СР С•Р С” РЎРЊР С”РЎР‚Р В°Р Р…Р В° 2022-04-29 Р Р† 16.10.15 (302x700, 98Kb)\"
+        desc.removingRegexMatches(pattern: "alt=\\\"(.+?)\"",replaceWith: "")
+        print(desc)
+        
+        let desc_enc = desc.data(using: String.Encoding.win1251)
+   
+       let desc_utf = NSString(data:desc_enc ?? Data(),encoding: String.Encoding.utf8.rawValue) as String?
 //        print(desc_utf?.win1251Encoded)
       //  cell?.webView.loadHTMLString(posts?.channel?.item![indexPath.row].description.win1251EncodedWithSpace.removingPercentEncoding ?? "", baseURL: URL(string: (post?.link)!))
         
@@ -180,6 +187,14 @@ extension String {
         let endIndex = index(from: r.upperBound)
         return String(self[startIndex..<endIndex])
     }
+    
+    mutating func removingRegexMatches(pattern: String, replaceWith: String = "") {
+           do {
+               let regex = try NSRegularExpression(pattern: pattern, options: .caseInsensitive)
+               let range = NSRange(location: 0, length: self.count)
+               self = regex.stringByReplacingMatches(in: self, options: [], range: range, withTemplate: replaceWith)
+           } catch { return }
+       }
 }
 
 extension FriendPostsController: MyTableViewCellDelegate {
