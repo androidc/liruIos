@@ -100,10 +100,10 @@ extension FriendPostsController:UITableViewDataSource {
       //  cell?.webView.loadHTMLString(posts?.channel?.item![indexPath.row].description.win1251EncodedWithSpace.removingPercentEncoding ?? "", baseURL: URL(string: (post?.link)!))
         
         if  let comments = post?.comments {
-            cell?.configure(with: "Комментировать(\(comments))",link:(post?.link)!,header: (post?.title)!)
+            cell?.configure(with: "\(Texts.comment)(\(comments))",link:(post?.link)!,header: (post?.title)!,desc: desc_utf ?? "")
            // cell?.CommentButton.titleLabel?.text = "Комментировать(\(comments))"
         } else
-        {   cell?.configure(with: "Комментировать(0)",link:(post?.link)!,header: (post?.title)!)
+        {   cell?.configure(with: "\(Texts.comment)(0)",link:(post?.link)!,header: (post?.title)!,desc: desc_utf ?? "")
            // cell?.CommentButton.titleLabel?.text = "Комментировать(0)"
         }
         
@@ -154,9 +154,7 @@ extension FriendPostsController:UITableViewDataSource {
               }}
             })
         task.resume()
-        
-        
-        
+     
     }
     
     
@@ -204,6 +202,24 @@ extension FriendPostsController: MyTableViewCellDelegate {
             self.present(nextViewController, animated:true, completion:nil)
         }
         
+        
+    }
+    
+    func didTabOpenButton(with link: String, header: String, description: String) {
+        //selpvc
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "selpvc") as! SelectedPostViewController
+        
+        nextViewController.modalPresentationStyle = .fullScreen
+        nextViewController.bbusername = self.bbusername
+        nextViewController.bbuserid = self.bbuserid
+        nextViewController.bbusername = self.bbusername
+            nextViewController.bbpassword = self.bbpassword
+        nextViewController.jurl = self.jurl
+        nextViewController.link = link
+        nextViewController.postHeader = header
+        nextViewController.desc = description
+        self.present(nextViewController, animated:true, completion:nil)
         
     }
     

@@ -538,6 +538,72 @@
             </objects>
             <point key="canvasLocation" x="2576.811594202899" y="-432.58928571428572"/>
         </scene>
+        <!--Selected Post View Controller-->
+        <scene sceneID="Zcq-aG-Bsx">
+            <objects>
+                <viewController storyboardIdentifier="selpvc" id="c5a-qe-7en" customClass="SelectedPostViewController" customModule="LiruIos" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Cd-yL-BrX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="50e-hd-ZZf">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="Hag-xd-PeF">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="xXP-gI-xrJ">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="3FU-sc-Dkx">
+                                                <rect key="frame" x="20" y="5" width="92" height="34.5"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="tinted" title="Назад"/>
+                                                <connections>
+                                                    <action selector="BackButtonAction:" destination="c5a-qe-7en" eventType="touchUpInside" id="VIN-iJ-fT4"/>
+                                                </connections>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2bS-ri-aIc">
+                                <rect key="frame" x="0.0" y="88" width="414" height="733"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgr-Yj-gQe">
+                                <rect key="frame" x="237" y="831" width="140" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Комментировать"/>
+                                <connections>
+                                    <action selector="CommentButtonAction:" destination="c5a-qe-7en" eventType="touchUpInside" id="hFO-Es-Fxs"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Db9-Pw-7Nf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wgr-Yj-gQe" firstAttribute="top" secondItem="2bS-ri-aIc" secondAttribute="bottom" constant="10" id="8Wj-wo-mLn"/>
+                            <constraint firstItem="Db9-Pw-7Nf" firstAttribute="trailing" secondItem="wgr-Yj-gQe" secondAttribute="trailing" constant="37" id="A1s-xC-a4p"/>
+                            <constraint firstItem="50e-hd-ZZf" firstAttribute="leading" secondItem="Db9-Pw-7Nf" secondAttribute="leading" id="KLi-Nr-NjP"/>
+                            <constraint firstItem="2bS-ri-aIc" firstAttribute="top" secondItem="50e-hd-ZZf" secondAttribute="bottom" id="WVo-gS-Mzg"/>
+                            <constraint firstItem="2bS-ri-aIc" firstAttribute="leading" secondItem="Db9-Pw-7Nf" secondAttribute="leading" id="fiR-3S-hnY"/>
+                            <constraint firstItem="Db9-Pw-7Nf" firstAttribute="trailing" secondItem="2bS-ri-aIc" secondAttribute="trailing" id="hCH-a8-3yv"/>
+                            <constraint firstItem="50e-hd-ZZf" firstAttribute="top" secondItem="Db9-Pw-7Nf" secondAttribute="top" id="jGu-54-WGW"/>
+                            <constraint firstItem="Db9-Pw-7Nf" firstAttribute="trailing" secondItem="50e-hd-ZZf" secondAttribute="trailing" id="v2O-Pf-loX"/>
+                            <constraint firstItem="Db9-Pw-7Nf" firstAttribute="bottom" secondItem="wgr-Yj-gQe" secondAttribute="bottom" id="vxH-OG-PIe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="navTitle" destination="Hag-xd-PeF" id="Vcx-U5-2ht"/>
+                        <outlet property="webView" destination="2bS-ri-aIc" id="fgX-a1-7Sy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dul-Ks-M8r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3540.579710144928" y="-431.25"/>
+        </scene>
         <!--Friends List Controller-->
         <scene sceneID="n7E-Y6-7cA">
             <objects>

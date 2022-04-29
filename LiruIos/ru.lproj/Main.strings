@@ -1,0 +1,177 @@
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "1l9-Jh-eqU"; */
+"1l9-Jh-eqU.title" = "Title";
+
+/* Class = "UIButton"; configuration.title = "M"; ObjectID = "1wE-2X-qYr"; */
+"1wE-2X-qYr.configuration.title" = "M";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "1wE-2X-qYr"; */
+"1wE-2X-qYr.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Назад"; ObjectID = "3FU-sc-Dkx"; */
+"3FU-sc-Dkx.configuration.title" = "Назад";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "3FU-sc-Dkx"; */
+"3FU-sc-Dkx.normalTitle" = "Button";
+
+/* Class = "UIViewController"; title = "Post"; ObjectID = "3v7-w3-y4B"; */
+"3v7-w3-y4B.title" = "Post";
+
+/* Class = "UIButton"; configuration.title = "Сменить пользователя"; ObjectID = "7Vm-ZJ-rKr"; */
+"7Vm-ZJ-rKr.configuration.title" = "Сменить пользователя";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7Vm-ZJ-rKr"; */
+"7Vm-ZJ-rKr.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Микроблог"; ObjectID = "7eH-RW-F5P"; */
+"7eH-RW-F5P.configuration.title" = "Микроблог";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "7eH-RW-F5P"; */
+"7eH-RW-F5P.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "S"; ObjectID = "9HU-mM-yeg"; */
+"9HU-mM-yeg.configuration.title" = "S";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9HU-mM-yeg"; */
+"9HU-mM-yeg.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Обновить список"; ObjectID = "9bM-Hy-g1G"; */
+"9bM-Hy-g1G.configuration.title" = "Обновить список";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9bM-Hy-g1G"; */
+"9bM-Hy-g1G.normalTitle" = "Button";
+
+/* Class = "UIViewController"; title = "Login"; ObjectID = "BYZ-38-t0r"; */
+"BYZ-38-t0r.title" = "Login";
+
+/* Class = "UIButton"; configuration.title = "Sign In"; ObjectID = "Bwr-kl-uAR"; */
+"Bwr-kl-uAR.configuration.title" = "Войти";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Bwr-kl-uAR"; */
+"Bwr-kl-uAR.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "В черновик"; ObjectID = "CAi-sw-Pag"; */
+"CAi-sw-Pag.configuration.title" = "В черновик";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "CAi-sw-Pag"; */
+"CAi-sw-Pag.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Лента друзей"; ObjectID = "DxM-Uy-xHw"; */
+"DxM-Uy-xHw.configuration.title" = "Лента друзей";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "DxM-Uy-xHw"; */
+"DxM-Uy-xHw.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Назад"; ObjectID = "EAI-T9-S7C"; */
+"EAI-T9-S7C.configuration.title" = "Назад";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "EAI-T9-S7C"; */
+"EAI-T9-S7C.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "Hag-xd-PeF"; */
+"Hag-xd-PeF.title" = "Title";
+
+/* Class = "UIButton"; configuration.title = "Скрыть"; ObjectID = "K7T-5L-E21"; */
+"K7T-5L-E21.configuration.title" = "Скрыть";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "K7T-5L-E21"; */
+"K7T-5L-E21.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Избранные"; ObjectID = "L5g-HC-yC1"; */
+"L5g-HC-yC1.configuration.title" = "Избранные";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "L5g-HC-yC1"; */
+"L5g-HC-yC1.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "B"; ObjectID = "Rec-LA-7QY"; */
+"Rec-LA-7QY.configuration.title" = "B";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Rec-LA-7QY"; */
+"Rec-LA-7QY.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Заголовок"; ObjectID = "Sdj-QZ-0Pi"; */
+"Sdj-QZ-0Pi.placeholder" = "Заголовок";
+
+/* Class = "UIButton"; configuration.title = "I"; ObjectID = "W6y-wT-cHZ"; */
+"W6y-wT-cHZ.configuration.title" = "I";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "W6y-wT-cHZ"; */
+"W6y-wT-cHZ.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Посты"; ObjectID = "YnN-BD-dML"; */
+"YnN-BD-dML.configuration.title" = "Посты";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "YnN-BD-dML"; */
+"YnN-BD-dML.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Лайк"; ObjectID = "aqH-Tw-cay"; */
+"aqH-Tw-cay.configuration.title" = "Лайк";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "aqH-Tw-cay"; */
+"aqH-Tw-cay.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "заголовок комментария"; ObjectID = "bqj-O2-Emi"; */
+"bqj-O2-Emi.placeholder" = "заголовок комментария";
+
+/* Class = "UIButton"; configuration.title = "Мой дневник"; ObjectID = "cl8-Ju-dYG"; */
+"cl8-Ju-dYG.configuration.title" = "Мой дневник";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "cl8-Ju-dYG"; */
+"cl8-Ju-dYG.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Назад"; ObjectID = "dZp-4t-BQh"; */
+"dZp-4t-BQh.configuration.title" = "Назад";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "dZp-4t-BQh"; */
+"dZp-4t-BQh.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Написать в дневник"; ObjectID = "e7y-Pl-cZz"; */
+"e7y-Pl-cZz.configuration.title" = "Написать в дневник";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "e7y-Pl-cZz"; */
+"e7y-Pl-cZz.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "fGk-d4-eZT"; */
+"fGk-d4-eZT.title" = "Title";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "glX-p7-ExC"; */
+"glX-p7-ExC.placeholder" = "Password";
+
+/* Class = "UIButton"; configuration.title = "Комментарии"; ObjectID = "hsO-gv-GbW"; */
+"hsO-gv-GbW.configuration.title" = "Комментарии";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "hsO-gv-GbW"; */
+"hsO-gv-GbW.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Имя пользователя"; ObjectID = "ifn-rr-9hR"; */
+"ifn-rr-9hR.text" = "Имя пользователя";
+
+/* Class = "UIButton"; configuration.title = "В дневник"; ObjectID = "nw7-q5-Tdc"; */
+"nw7-q5-Tdc.configuration.title" = "В дневник";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "nw7-q5-Tdc"; */
+"nw7-q5-Tdc.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Список друзей"; ObjectID = "oLr-kx-7Ll"; */
+"oLr-kx-7Ll.configuration.title" = "Список друзей";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "oLr-kx-7Ll"; */
+"oLr-kx-7Ll.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Теги через запятую"; ObjectID = "rfw-eb-cby"; */
+"rfw-eb-cby.placeholder" = "Теги через запятую";
+
+/* Class = "UITextField"; placeholder = "Login"; ObjectID = "ugD-Wt-60b"; */
+"ugD-Wt-60b.placeholder" = "Login";
+
+/* Class = "UIButton"; configuration.title = "Отправить"; ObjectID = "v8q-ey-A7J"; */
+"v8q-ey-A7J.configuration.title" = "Отправить";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "v8q-ey-A7J"; */
+"v8q-ey-A7J.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Комментировать"; ObjectID = "wgr-Yj-gQe"; */
+"wgr-Yj-gQe.configuration.title" = "Комментировать";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "wgr-Yj-gQe"; */
+"wgr-Yj-gQe.normalTitle" = "Button";

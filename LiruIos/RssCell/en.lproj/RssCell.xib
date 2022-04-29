@@ -33,12 +33,20 @@
                         </wkWebViewConfiguration>
                     </wkWebView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNG-rk-ct2">
-                        <rect key="frame" x="688" y="246" width="138" height="31"/>
-                        <buttonConfiguration key="configuration" style="gray" title="комментировать">
+                        <rect key="frame" x="739" y="246" width="87" height="31"/>
+                        <buttonConfiguration key="configuration" style="gray" title="Comment">
                             <fontDescription key="titleFontDescription" type="system" pointSize="14"/>
                         </buttonConfiguration>
                         <connections>
                             <action selector="didTapButton" destination="KN5-w3-yX3" eventType="touchUpInside" id="OY7-ZK-zpE"/>
+                        </connections>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOX-cr-Xhg">
+                        <rect key="frame" x="34" y="246" width="59" height="31"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="gray" title="Open"/>
+                        <connections>
+                            <action selector="didTapOpenButton" destination="KN5-w3-yX3" eventType="touchUpInside" id="zkn-EM-nGY"/>
                         </connections>
                     </button>
                 </subviews>
@@ -51,6 +59,8 @@
                     <constraint firstItem="sj8-X2-6Gi" firstAttribute="leading" secondItem="1C9-2R-dNk" secondAttribute="leading" constant="10" id="ZMx-DY-bsA"/>
                     <constraint firstAttribute="bottom" secondItem="8wR-Gb-zcq" secondAttribute="bottom" constant="50" id="dfV-tU-tG9"/>
                     <constraint firstAttribute="trailing" secondItem="sj8-X2-6Gi" secondAttribute="trailing" constant="10" id="fIU-CY-cLH"/>
+                    <constraint firstItem="zOX-cr-Xhg" firstAttribute="leading" secondItem="1C9-2R-dNk" secondAttribute="leading" constant="34" id="hq1-XB-VII"/>
+                    <constraint firstAttribute="bottom" secondItem="zOX-cr-Xhg" secondAttribute="bottom" constant="11" id="uUu-5p-kt8"/>
                     <constraint firstAttribute="bottom" secondItem="jNG-rk-ct2" secondAttribute="bottom" constant="11" id="vTq-Ku-m9a"/>
                     <constraint firstItem="jNG-rk-ct2" firstAttribute="top" secondItem="8wR-Gb-zcq" secondAttribute="bottom" constant="8" symbolic="YES" id="wIn-bf-5We"/>
                 </constraints>
@@ -61,6 +71,7 @@
             <connections>
                 <outlet property="CommentButton" destination="jNG-rk-ct2" id="hsc-gY-kpq"/>
                 <outlet property="Header" destination="sj8-X2-6Gi" id="8Wn-3z-s0w"/>
+                <outlet property="OpenButton" destination="zOX-cr-Xhg" id="uLO-YZ-IWj"/>
                 <outlet property="webView" destination="8wR-Gb-zcq" id="TLF-pq-gXB"/>
             </connections>
             <point key="canvasLocation" x="-147.82608695652175" y="-288.61607142857139"/>

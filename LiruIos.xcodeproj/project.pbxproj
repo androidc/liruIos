@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1B0243632815E9D9008E80BB /* CommentCellWithWebView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B0243622815E9D9008E80BB /* CommentCellWithWebView.xib */; };
 		1B0243652815EB20008E80BB /* CommentCellWithWebViewClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0243642815EB20008E80BB /* CommentCellWithWebViewClass.swift */; };
+		1B024367281C0527008E80BB /* SelectedPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B024366281C0527008E80BB /* SelectedPostViewController.swift */; };
+		1B02436C281C139A008E80BB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1B02436E281C139A008E80BB /* Localizable.strings */; };
+		1B024372281C179C008E80BB /* RssCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B024374281C179C008E80BB /* RssCell.xib */; };
 		1B0CAFAA27A19538007CF2FD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0CAFA927A19538007CF2FD /* AppDelegate.swift */; };
 		1B0CAFAC27A19538007CF2FD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0CAFAB27A19538007CF2FD /* SceneDelegate.swift */; };
 		1B0CAFAE27A19538007CF2FD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0CAFAD27A19538007CF2FD /* ViewController.swift */; };
@@ -26,7 +29,6 @@
 		1BBAD76927CCC2BD0058DF7D /* FavoritesListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD76827CCC2BD0058DF7D /* FavoritesListController.swift */; };
 		1BBAD76B27CCD5220058DF7D /* RSSXMLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD76A27CCD5220058DF7D /* RSSXMLModel.swift */; };
 		1BBAD77027CD0C490058DF7D /* FriendPostsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD76F27CD0C480058DF7D /* FriendPostsController.swift */; };
-		1BBAD77327CD1CE20058DF7D /* RssCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BBAD77227CD1CE20058DF7D /* RssCell.xib */; };
 		1BBAD77527CD1D230058DF7D /* RssCellClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD77427CD1D230058DF7D /* RssCellClass.swift */; };
 		1BD3383127E8D3F100727676 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD3383027E8D3F100727676 /* CommentViewController.swift */; };
 		1BD3383327F483FE00727676 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1BD3383227F483FE00727676 /* CommentCell.xib */; };
@@ -40,6 +42,14 @@
 /* Begin PBXFileReference section */
 		1B0243622815E9D9008E80BB /* CommentCellWithWebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCellWithWebView.xib; sourceTree = "<group>"; };
 		1B0243642815EB20008E80BB /* CommentCellWithWebViewClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentCellWithWebViewClass.swift; sourceTree = "<group>"; };
+		1B024366281C0527008E80BB /* SelectedPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedPostViewController.swift; sourceTree = "<group>"; };
+		1B024368281C1306008E80BB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		1B024369281C1306008E80BB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1B02436D281C139A008E80BB /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1B02436F281C139B008E80BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1B024371281C14FF008E80BB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		1B024373281C179C008E80BB /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RssCell.xib; sourceTree = "<group>"; };
+		1B024378281C1829008E80BB /* ru */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = ru; path = ru.lproj/RssCell.xib; sourceTree = "<group>"; };
 		1B0CAFA627A19538007CF2FD /* LiruIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LiruIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B0CAFA927A19538007CF2FD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B0CAFAB27A19538007CF2FD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +69,6 @@
 		1BBAD76827CCC2BD0058DF7D /* FavoritesListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesListController.swift; sourceTree = "<group>"; };
 		1BBAD76A27CCD5220058DF7D /* RSSXMLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSSXMLModel.swift; sourceTree = "<group>"; };
 		1BBAD76F27CD0C480058DF7D /* FriendPostsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendPostsController.swift; sourceTree = "<group>"; };
-		1BBAD77227CD1CE20058DF7D /* RssCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RssCell.xib; sourceTree = "<group>"; };
 		1BBAD77427CD1D230058DF7D /* RssCellClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RssCellClass.swift; sourceTree = "<group>"; };
 		1BD3383027E8D3F100727676 /* CommentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
 		1BD3383227F483FE00727676 /* CommentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
@@ -124,6 +133,8 @@
 				1BBAD76827CCC2BD0058DF7D /* FavoritesListController.swift */,
 				1BBAD76F27CD0C480058DF7D /* FriendPostsController.swift */,
 				1BD3383027E8D3F100727676 /* CommentViewController.swift */,
+				1B024366281C0527008E80BB /* SelectedPostViewController.swift */,
+				1B02436E281C139A008E80BB /* Localizable.strings */,
 			);
 			path = LiruIos;
 			sourceTree = "<group>";
@@ -159,7 +170,7 @@
 		1BBAD77127CD1CB10058DF7D /* RssCell */ = {
 			isa = PBXGroup;
 			children = (
-				1BBAD77227CD1CE20058DF7D /* RssCell.xib */,
+				1B024374281C179C008E80BB /* RssCell.xib */,
 				1BBAD77427CD1D230058DF7D /* RssCellClass.swift */,
 				1BD3383227F483FE00727676 /* CommentCell.xib */,
 				1BD3383427F4861B00727676 /* CommentCellClass.swift */,
@@ -230,6 +241,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 1B0CAF9D27A19538007CF2FD;
 			productRefGroup = 1B0CAFA727A19538007CF2FD /* Products */;
@@ -247,8 +259,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BD3383327F483FE00727676 /* CommentCell.xib in Resources */,
-				1BBAD77327CD1CE20058DF7D /* RssCell.xib in Resources */,
+				1B024372281C179C008E80BB /* RssCell.xib in Resources */,
 				1B0CAFB627A1953D007CF2FD /* LaunchScreen.storyboard in Resources */,
+				1B02436C281C139A008E80BB /* Localizable.strings in Resources */,
 				1B0CAFB327A1953D007CF2FD /* Assets.xcassets in Resources */,
 				1B0CAFB127A19538007CF2FD /* Main.storyboard in Resources */,
 				1B0243632815E9D9008E80BB /* CommentCellWithWebView.xib in Resources */,
@@ -312,6 +325,7 @@
 				1BFEC9BD27A6D28A005C2FF5 /* PostViewController.swift in Sources */,
 				1B0243652815EB20008E80BB /* CommentCellWithWebViewClass.swift in Sources */,
 				1BD3383527F4861B00727676 /* CommentCellClass.swift in Sources */,
+				1B024367281C0527008E80BB /* SelectedPostViewController.swift in Sources */,
 				1BBAD76B27CCD5220058DF7D /* RSSXMLModel.swift in Sources */,
 				1BBAD75E27BC07C60058DF7D /* Friend+CoreDataProperties.swift in Sources */,
 				1B0CAFAE27A19538007CF2FD /* ViewController.swift in Sources */,
@@ -331,10 +345,30 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		1B02436E281C139A008E80BB /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B02436D281C139A008E80BB /* ru */,
+				1B02436F281C139B008E80BB /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		1B024374281C179C008E80BB /* RssCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B024373281C179C008E80BB /* en */,
+				1B024378281C1829008E80BB /* ru */,
+			);
+			name = RssCell.xib;
+			sourceTree = "<group>";
+		};
 		1B0CAFAF27A19538007CF2FD /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1B0CAFB027A19538007CF2FD /* Base */,
+				1B024368281C1306008E80BB /* ru */,
+				1B024371281C14FF008E80BB /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -343,6 +377,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				1B0CAFB527A1953D007CF2FD /* Base */,
+				1B024369281C1306008E80BB /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -354,6 +389,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -415,6 +451,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

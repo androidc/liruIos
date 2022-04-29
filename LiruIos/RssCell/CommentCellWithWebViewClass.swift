@@ -23,7 +23,7 @@ class CommentCellWithWebView:UITableViewCell {
 
     //textFieldCell.layer.borderColor = UIColor.orange.cgColor
     self.layer.borderWidth = 3
-    self.layer.borderColor = UIColor.orange.cgColor
+        self.layer.borderColor = UIColor.systemBlue.cgColor
         
     
 

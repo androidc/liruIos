@@ -30,6 +30,52 @@ class CommentViewController: UIViewController {
     let commentCell = "CommentCell"
     let commentCellWithWebView = "CommentCellWithWebView"
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+       
+        view.addSubview(activityIndicator)
+        
+        activityIndicator.snp.makeConstraints { make in
+            make.height.equalTo(100)
+            make.width.equalTo(100)
+          //  make.centerY.equalTo(view.snp.centerY)
+          //  make.centerX.equalTo(view.snp.centerY)
+            make.centerX.equalToSuperview()
+            make.centerY.equalTo(view.snp.bottom).inset(60)
+        }
+      //  print("CCCCCCCCCCC")
+        print(rssString)
+        
+        messageInput.layer.borderWidth = 3
+        messageInput.layer.borderColor = UIColor.darkGray.cgColor
+        
+        self.posts = XMLMapper<RSS>().map(XMLString: rssString.replacingOccurrences(of: "И", with: "и"))
+        
+        if (self.link == posts?.channel?.link) {
+            // значит получили правильный rss и можно заполнять данные
+            let header_enc = posts?.channel?.title?.data(using: String.Encoding.win1251)
+            let _title = NSString(data:header_enc!,encoding: String.Encoding.utf8.rawValue) as String?
+                 navTitle.title = _title
+            tableView.rowHeight = 200
+            tableView.dataSource = self
+            tableView.delegate = self
+            tableView.register(UINib(nibName: "CommentCellWithWebView", bundle: nil), forCellReuseIdentifier: commentCellWithWebView)
+            
+         
+            
+        } else
+        {
+            
+            
+            let navTitleData = postHeader.data(using: String.Encoding.win1251)
+            
+            navTitle.title = NSString(data:navTitleData!,encoding: String.Encoding.utf8.rawValue) as String?
+        }
+       
+        
+    }
+    
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -244,65 +290,12 @@ class CommentViewController: UIViewController {
         task.resume()
         
         
-    
-        
-        
-        
-        
-        
-        
-        
         
     }
     
   
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-       
-        view.addSubview(activityIndicator)
-        
-        activityIndicator.snp.makeConstraints { make in
-            make.height.equalTo(100)
-            make.width.equalTo(100)
-          //  make.centerY.equalTo(view.snp.centerY)
-          //  make.centerX.equalTo(view.snp.centerY)
-            make.centerX.equalToSuperview()
-            make.centerY.equalTo(view.snp.bottom).inset(60)
-        }
-      //  print("CCCCCCCCCCC")
-        print(rssString)
-        
-        messageInput.layer.borderWidth = 3
-        messageInput.layer.borderColor = UIColor.darkGray.cgColor
-        
-        self.posts = XMLMapper<RSS>().map(XMLString: rssString.replacingOccurrences(of: "И", with: "и"))
-        
-        if (self.link == posts?.channel?.link) {
-            // значит получили правильный rss и можно заполнять данные
-            let header_enc = posts?.channel?.title?.data(using: String.Encoding.win1251)
-            let _title = NSString(data:header_enc!,encoding: String.Encoding.utf8.rawValue) as String?
-                 navTitle.title = _title
-            tableView.rowHeight = 200
-            tableView.dataSource = self
-            tableView.delegate = self
-            tableView.register(UINib(nibName: "CommentCellWithWebView", bundle: nil), forCellReuseIdentifier: commentCellWithWebView)
-            
-           // tableView.register(UINib(nibName: "CommentCell", bundle: nil), forCellReuseIdentifier: commentCell)
-          //  tableView.register(UINib(nibName: "CommentCellWithWebView", bundle: nil), forCellReuseIdentifier: commentCellWithWebView)
-            
-        } else
-        {
-            
-            
-            let navTitleData = postHeader.data(using: String.Encoding.win1251)
-            
-            navTitle.title = NSString(data:navTitleData!,encoding: String.Encoding.utf8.rawValue) as String?
-        }
-       
-        
-    }
+   
     
   
 }
