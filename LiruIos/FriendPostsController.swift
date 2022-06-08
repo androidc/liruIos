@@ -45,7 +45,7 @@ class FriendPostsController: UIViewController {
        //print(rssString)
         
         posts = XMLMapper<RSS>().map(XMLString: rssString.replacingOccurrences(of: "И", with: "и").replacingOccurrences(of: "\"//img", with: "\"https://img"))
-        
+      //  posts = XMLMapper<RSS>().map(XMLString: rssString.replacingOccurrences(of: "\"//img", with: "\"https://img"))
      //   let str = posts?.channel?.item![0].title?.xmlEncodedString
     //    let strr = str?.data(using: String.Encoding.win1251)
      //   print(NSString(data:strr!,encoding: String.Encoding.utf8.rawValue))

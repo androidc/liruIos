@@ -263,11 +263,23 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7eH-RW-F5P">
-                                <rect key="frame" x="294" y="72" width="100" height="31"/>
+                                <rect key="frame" x="335" y="72" width="69" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Микроблог"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Микро"/>
                                 <connections>
                                     <action selector="MicroButtonAction:" destination="wqf-vD-Yor" eventType="touchUpInside" id="31C-xE-kdf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DxK-yZ-kte">
+                                <rect key="frame" x="252" y="62" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="LGh-H8-8dP"/>
+                                    <constraint firstAttribute="height" constant="50" id="xPf-Y3-J1C"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" image="text.below.photo.rtl" catalog="system"/>
+                                <connections>
+                                    <action selector="OpenImgPickerAction:" destination="wqf-vD-Yor" eventType="touchUpInside" id="iMW-ml-tmq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -283,6 +295,7 @@
                             <constraint firstItem="Sdj-QZ-0Pi" firstAttribute="leading" secondItem="zu3-GR-xlG" secondAttribute="leading" id="F9P-q3-PPL"/>
                             <constraint firstItem="zu3-GR-xlG" firstAttribute="trailing" secondItem="Sdj-QZ-0Pi" secondAttribute="trailing" id="HM2-pr-ZCx"/>
                             <constraint firstItem="9HU-mM-yeg" firstAttribute="leading" secondItem="zu3-GR-xlG" secondAttribute="leading" constant="20" id="Jv7-mR-zba"/>
+                            <constraint firstItem="DxK-yZ-kte" firstAttribute="leading" secondItem="1wE-2X-qYr" secondAttribute="trailing" constant="8" symbolic="YES" id="KU6-OT-ix2"/>
                             <constraint firstItem="1wE-2X-qYr" firstAttribute="top" secondItem="Sdj-QZ-0Pi" secondAttribute="bottom" constant="8" symbolic="YES" id="KUo-Hd-VPh"/>
                             <constraint firstItem="zu3-GR-xlG" firstAttribute="trailing" secondItem="nw7-q5-Tdc" secondAttribute="trailing" constant="20" id="Kbf-Z0-RMh"/>
                             <constraint firstItem="rfw-eb-cby" firstAttribute="top" secondItem="yPJ-er-gRn" secondAttribute="bottom" constant="83" id="MJJ-3c-5sc"/>
@@ -302,7 +315,8 @@
                             <constraint firstItem="zu3-GR-xlG" firstAttribute="trailing" secondItem="yPJ-er-gRn" secondAttribute="trailing" constant="20" id="keX-Iw-7aI"/>
                             <constraint firstItem="W6y-wT-cHZ" firstAttribute="top" secondItem="Sdj-QZ-0Pi" secondAttribute="bottom" constant="8" symbolic="YES" id="llr-SL-wbc"/>
                             <constraint firstItem="1wE-2X-qYr" firstAttribute="leading" secondItem="Rec-LA-7QY" secondAttribute="trailing" constant="8" symbolic="YES" id="nCD-XN-gZf"/>
-                            <constraint firstItem="zu3-GR-xlG" firstAttribute="trailing" secondItem="7eH-RW-F5P" secondAttribute="trailing" constant="20" id="rjb-s3-zFa"/>
+                            <constraint firstItem="DxK-yZ-kte" firstAttribute="top" secondItem="Sdj-QZ-0Pi" secondAttribute="bottom" constant="8" symbolic="YES" id="pXy-hX-CeZ"/>
+                            <constraint firstItem="zu3-GR-xlG" firstAttribute="trailing" secondItem="7eH-RW-F5P" secondAttribute="trailing" constant="10" id="rjb-s3-zFa"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -659,6 +673,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="text.below.photo.rtl" catalog="system" width="117" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

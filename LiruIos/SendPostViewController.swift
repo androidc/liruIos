@@ -73,12 +73,13 @@ class SendPostViewController: UIViewController {
             .replacingOccurrences(of: "%2F", with: "/")
     }
     
+    
     private func GetRssWithCompletion(url:URL,completion: @escaping(_ rssString:String) -> ()) {
         
         let session = URLSession.shared
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        request.addValue("application/x-www-form-urlencoded;charset=win-1251", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/x-www-form-urlencoded;charset=windows-1251", forHTTPHeaderField: "Content-Type")
         // Form URL-Encoded Body
         let cookieString = "chbx=guest; jurl=\(jurl);ucss=normal; bbuserid=\(bbuserid); bbpassword=\(bbpassword); bbusername=\(bbusername)"
         request.addValue(cookieString, forHTTPHeaderField: "Cookie")
@@ -91,9 +92,19 @@ class SendPostViewController: UIViewController {
                 let statusCode = (response as! HTTPURLResponse).statusCode
                // print("URL Session Task Succeeded: HTTP \(statusCode)")
                 if statusCode == 200 {
-                    let responseString = NSString(data: data!, encoding: String.Encoding.win1251.rawValue)
+                    let responseString = NSString(data: data!, encoding: String.Encoding.windowsCP1251.rawValue)
+ 
+                    if responseString != nil {
+                        completion(responseString! as String)
+                    }
+                    else {
+                     
+                       // print(data!.debugDescription)
+                        //completion(data!.debugDescription)
+                        
+                    }
+                    
                    
-                    completion(responseString! as String)
                 }
                
               

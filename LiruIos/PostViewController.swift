@@ -2,14 +2,15 @@
 //  PostViewController.swift
 //  LiruIos
 //
-//  Created by Артем Солохин on 30.01.2022.
+//  Created 
 //
 
 import Foundation
 import UIKit
 import Alamofire
+import ImagePicker
 
-class PostViewController: UIViewController {
+class PostViewController: UIViewController{
     
     private var header: String = ""
     private var tags: String = ""
@@ -26,6 +27,19 @@ class PostViewController: UIViewController {
         header = sender.text!
     }
     
+    @IBAction func OpenImgPickerAction(_ sender: UIButton) {
+        
+        let config = ImagePickerConfiguration()
+         config.doneButtonTitle = "Finish"
+         config.noImagesTitle = "Sorry! There are no images here!"
+         config.recordLocation = false
+        
+        let imagePicker = ImagePickerController(configuration: config)
+           imagePicker.delegate = self
+
+           present(imagePicker, animated: true, completion: nil)
+        
+    }
     @IBOutlet weak var picker: UIPickerView!
     
     @IBOutlet weak var TextView: UITextView!
@@ -352,6 +366,49 @@ class PostViewController: UIViewController {
         
     }
     
+    private func getImgUrl(names:[String]) {
+        
+
+        
+        let requestURL:String = "http://www.liveinternet.ru/journal_proc.php"
+        var headers:HTTPHeaders = [
+        "Content-type":"application/x-www-form-urlencoded; charset=UTF-8"]
+        headers["Accept"] = "*/*"
+        headers["User-Agent"] = "Mozilla/5.0 (Windows NT 5.1)"
+        headers["Cookie"] = "li-plug_top=closed; chbx=guest; jurl=" + jurl + "; ucss=normal; bbuserid=" + bbuserid + "; bbpassword=" + bbpassword + "; bbusername=" + bbusername
+        headers["Referer"] = "http://www.liveinternet.ru/journal_post.php?journalid=\(bbuserid)"
+        headers["Accept-Encoding"] = "gzip,deflate,sdcn"
+        headers["Accept-Language"] = "ru,en;q=0.8"
+        headers["X-Requested-With"] = "XMLHttpRequest"
+        
+        var parameters:Dictionary = [
+            "action":"parse_plup_images"]
+        
+        for (index,name) in names.enumerated() {
+            parameters["uploader_\(index)_name"] = name
+            parameters["uploader_\(index)_tmpname"] = name
+            parameters["uploader_\(index)_status"] = "done"
+           // print(name)
+           // print(index)
+        }
+        
+        AF.request(
+            requestURL,
+            method: .post,
+            parameters: parameters,
+            headers: headers
+        ).response  { [weak self] response in
+            //print(response.debugDescription)
+            
+            self?.TextView.text += response.debugDescription
+            
+            
+        }
+        
+    
+        
+    }
+    
     private func sendPost(draft:Bool) {
         
         let requestURL:String = "http://www.liveinternet.ru/journal_addpost.php?doajax=1";
@@ -403,8 +460,8 @@ class PostViewController: UIViewController {
             parameters: parameters,
             headers: headers
         ).response  { [weak self] response in
-            print(response.debugDescription)
-            print(HTTPCookieStorage.shared.cookies!)
+           // print(response.debugDescription)
+          //  print(HTTPCookieStorage.shared.cookies!)
             
         }
             
@@ -419,12 +476,23 @@ class PostViewController: UIViewController {
         
     }
     
-  
+    // activityIndicator.startAnimating()
+    //activityIndicator.stopAnimating()
+    private lazy var activityIndicator: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView(style: .large)
+        return view
+    }()
+        
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-   
+        
+//        print(bbuserid)
+//        print(bbpassword)
+//        print(bbusername)
+//        print(jurl)
+//
 
         pickerData = ["как и весь дневник", "закрыт неавторизованным", "закрыт всем кроме друзей и ПЧ", "закрыт всем, кроме хозяина дневника","закрыт всем, кроме избранных"]
         
@@ -433,11 +501,117 @@ class PostViewController: UIViewController {
         // Connect data:
               self.picker.delegate = self
               self.picker.dataSource = self
+        
+        view.addSubview(activityIndicator)
        
     }
     
     
     
+}
+
+extension PostViewController: ImagePickerDelegate {
+  
+    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+       imagePicker.dismiss(animated: true, completion: nil)
+     }
+
+     func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+        /*
+       guard images.count > 0 else { return }
+       let lightboxImages = images.map {
+         return LightboxImage(image: $0)
+       }
+       let lightbox = LightboxController(images: lightboxImages, startIndex: 0)
+       imagePicker.present(lightbox, animated: true, completion: nil)
+        */
+     }
+    
+    /* this func not used, for code example*/
+    func createRequestBody(imageData: Data, boundary: String, attachmentKey: String, fileName: String) -> Data{
+           let lineBreak = "\r\n"
+           var requestBody = Data()
+
+           requestBody.append("\(lineBreak)--\(boundary + lineBreak)" .data(using: .utf8)!)
+           requestBody.append("Content-Disposition: form-data; name=\"\(attachmentKey)\"; filename=\"\(fileName)\"\(lineBreak)" .data(using: .utf8)!)
+           requestBody.append("Content-Type: image/jpeg \(lineBreak + lineBreak)" .data(using: .utf8)!) // you can change the type accordingly if you want to
+           requestBody.append(imageData)
+           requestBody.append("\(lineBreak)--\(boundary)--\(lineBreak)" .data(using: .utf8)!)
+
+           return requestBody
+       }
+
+     func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
+       
+     //    print("selected images count:\(images.count)")
+         let url =  "https://www.liveinternet.ru/uploader/upload.php"
+         let lineBreak = "\r\n"
+         var urlRequest = URLRequest(url: URL(string: url)!)
+         
+         urlRequest.httpMethod = "post"
+         urlRequest.addValue("li-plug_top=closed; chbx=guest; jurl=" + jurl + "; ucss=normal; bbuserid=" + bbuserid + "; bbpassword=" + bbpassword + "; bbusername=" + bbusername, forHTTPHeaderField: "Cookie")
+         urlRequest.addValue("https://liveinternet.ru/journal_post.php?journalid="+bbuserid, forHTTPHeaderField: "Referer")
+         urlRequest.addValue("gzip,deflate,sdcn", forHTTPHeaderField: "Accept-Encoding")
+         urlRequest.addValue("ru,en;q=0.8", forHTTPHeaderField: "Accept-Language")
+         urlRequest.addValue("Mozilla/5.0 (Windows NT 5.1)", forHTTPHeaderField: "User-Agent")
+         let bodyBoundary = "--------------------------\(UUID().uuidString)"
+         urlRequest.addValue("multipart/form-data; boundary=\(bodyBoundary)", forHTTPHeaderField: "Content-Type")
+         
+         var names:[String] = []
+         let dispatchGroup = DispatchGroup()
+         activityIndicator.startAnimating()
+         for img in images {
+             let filename = "\(UUID().uuidString)".replacingOccurrences(of: "-", with: "_")
+             let filename1 = "\(filename).jpg"
+             names.append(filename1)
+             var requestBody = Data()
+           //  let tmpname = "tmp_ddd\(i).jpg"
+             
+             //print(filename1)
+             
+              let imageData = img.jpegData(compressionQuality: 0.9)
+             //let imageData = img.pngData()
+             requestBody.append("\(lineBreak)--\(bodyBoundary + lineBreak)" .data(using: .utf8)!)
+             requestBody.append("Content-Disposition: form-data; name=\"name\"; \(lineBreak)" .data(using: .utf8)!)
+             requestBody.append("\(lineBreak)\(lineBreak)\(filename1)\(lineBreak)" .data(using: .utf8)!)
+             
+             requestBody.append("\(lineBreak)--\(bodyBoundary + lineBreak)" .data(using: .utf8)!)
+             requestBody.append("Content-Disposition: form-data; name=\"file\"; filename=\"\(filename1)\"\(lineBreak)" .data(using: .utf8)!)
+             requestBody.append("Content-Type: image/jpeg \(lineBreak + lineBreak)" .data(using: .utf8)!) // you can change the type accordingly if you want to
+             requestBody.append(imageData!)
+             //requestBody.append("\(lineBreak)--\(bodyBoundary + lineBreak)" .data(using: .utf8)!)
+             //requestBody.append(lineBreak .data(using: .utf8)!)
+             requestBody.append("\(lineBreak)--\(bodyBoundary)--\(lineBreak)" .data(using: .utf8)!)
+             
+             urlRequest.httpBody = requestBody
+             urlRequest.addValue("\(requestBody.count)", forHTTPHeaderField: "content-length")
+             dispatchGroup.enter()
+             URLSession.shared.dataTask(with: urlRequest) { (data, httpUrlResponse, error) in
+
+                       if(error == nil && data != nil && data?.count != 0){
+                         //  print(httpUrlResponse?.description)
+                           
+                           print("its work \(filename1)")
+                           dispatchGroup.leave()
+                           
+                       }
+                   }.resume()
+           
+         }
+       
+         dispatchGroup.notify(queue: DispatchQueue.main) {
+             self.activityIndicator.stopAnimating()
+             self.getImgUrl(names: names)
+             
+             //print("all done")
+         }
+         
+         
+       
+         
+         
+         imagePicker.dismiss(animated: true, completion: nil)
+     }
 }
 
 extension PostViewController:  UIPickerViewDelegate, UIPickerViewDataSource {

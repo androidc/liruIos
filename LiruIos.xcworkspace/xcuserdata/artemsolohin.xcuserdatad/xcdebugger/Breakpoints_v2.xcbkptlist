@@ -14,8 +14,8 @@
             filePath = "LiruIos/SendPostViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "179"
-            endingLineNumber = "179"
+            startingLineNumber = "190"
+            endingLineNumber = "190"
             landmarkName = "SetupViews()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "LiruIos/PostViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
             landmarkName = "sendPostCP1251(url:draft:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,8 +302,8 @@
             filePath = "LiruIos/SendPostViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
             landmarkName = "GetRssWithCompletion(url:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -482,6 +482,86 @@
             endingLineNumber = "29"
             landmarkName = "didTapOpenButton()"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C9DF0EC3-7A6E-4707-AF3C-7D8E42D07206"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LiruIos/SendPostViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "GetRssWithCompletion(url:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD9BF1A7-9BA4-4884-8C35-A0CBE1952AC6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/ImagePicker/Source/ImagePickerController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "GestureConstants"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29546AE3-0540-47DD-921E-96E5D5F2C61C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/ImagePicker/Source/ImagePickerController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "init(configuration:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "29546AE3-0540-47DD-921E-96E5D5F2C61C - ce126a7a446e429b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImagePicker.ImagePickerController.init(configuration: ImagePicker.ImagePickerConfiguration) -&gt; ImagePicker.ImagePickerController"
+                  moduleName = "ImagePicker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/artemsolohin/Desktop/Projects/LiruIos/LiruIos/Pods/ImagePicker/Source/ImagePickerController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "95"
+                  endingLineNumber = "95"
+                  offsetFromSymbolStart = "852">
+               </Location>
+               <Location
+                  uuid = "29546AE3-0540-47DD-921E-96E5D5F2C61C - ce126a7a446e4278"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ImagePicker.ImagePickerController.init(configuration: ImagePicker.ImagePickerConfiguration) -&gt; ImagePicker.ImagePickerController"
+                  moduleName = "ImagePicker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/artemsolohin/Desktop/Projects/LiruIos/LiruIos/Pods/ImagePicker/Source/ImagePickerController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "852">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
