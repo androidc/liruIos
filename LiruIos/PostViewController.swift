@@ -2,7 +2,7 @@
 //  PostViewController.swift
 //  LiruIos
 //
-//  Created 
+//  Created
 //
 
 import Foundation
@@ -399,8 +399,16 @@ class PostViewController: UIViewController{
             headers: headers
         ).response  { [weak self] response in
             //print(response.debugDescription)
+            if let data = response.data {
+                var json = String(data:data,encoding: .utf8)
+                json = json?.replacingOccurrences(of: "{\"images_code\":\"", with: "")
+                json = json?.replacingOccurrences(of: "\"}", with: "")
+                json = json?.replacingOccurrences(of: "\\\\", with: "")
+                json = json?.replacingOccurrences(of: "\\", with: "")
+                
+                self?.TextView.text += json ?? ""
+            }
             
-            self?.TextView.text += response.debugDescription
             
             
         }
