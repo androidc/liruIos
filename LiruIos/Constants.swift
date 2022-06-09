@@ -2,7 +2,7 @@
 //  Constants.swift
 //  LiruIos
 //
-//  Created by Артем Солохин on 07.02.2022.
+//  Created  on 07.02.2022.
 //
 
 import Foundation

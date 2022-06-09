@@ -2,7 +2,7 @@
 //  FriendPostsController.swift
 //  LiruIos
 //
-//  Created by Артем Солохин on 28.02.2022.
+//  Created  on 28.02.2022.
 //
  
 

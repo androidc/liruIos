@@ -2,7 +2,7 @@
 //  CommentCellWithWebViewClass.swift
 //  LiruIos
 //
-//  Created by Артем Солохин on 24.04.2022.
+//  Created
 //
 
 import Foundation

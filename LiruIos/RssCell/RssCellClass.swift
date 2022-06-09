@@ -2,7 +2,7 @@
 //  RssCellClass.swift
 //  LiruIos
 //
-//  Created by Артем Солохин on 28.02.2022.
+//  Created  on 28.02.2022.
 //
 
 import UIKit

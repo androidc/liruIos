@@ -2,7 +2,7 @@
 //  SendPostViewController.swift
 //  LiruIos
 //
-//  Created by Артем Солохин on 27.01.2022.
+//  Created on 27.01.2022.
 //
 
 import Foundation

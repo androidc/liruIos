@@ -2,7 +2,7 @@
 //  FriendsXMLModel.swift
 //  LiruIos
 //
-//  Created by Артем Солохин on 14.02.2022.
+//  Created  on 14.02.2022.
 //
 
 import Foundation

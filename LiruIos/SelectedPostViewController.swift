@@ -2,7 +2,7 @@
 //  SelectedPostViewController.swift
 //  LiruIos
 //
-//  Created by Артем Солохин on 29.04.2022.
+//  Created on 29.04.2022.
 //
 
 import Foundation
