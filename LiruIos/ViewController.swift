@@ -67,6 +67,39 @@ class ViewController: UIViewController {
                 if ud_init() == true {
                     //print("пользак уже есть")
                     
+                  
+                    if let userDefaults = UserDefaults(suiteName: "group.liruios") {
+                        let input =  userDefaults.string(forKey: "incomingURL")
+                        print("input:\(input)")
+                        if input != "" {
+                            
+                            let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+                            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "postvc") as! PostViewController
+                            nextViewController.modalPresentationStyle = .fullScreen
+                            
+                            nextViewController.bbusername = ud_bbusername!
+                            nextViewController.jurl = ud_jurl!
+                            nextViewController.bbuserid = ud_bbuserid!
+                            nextViewController.bbpassword = ud_bbpassword!
+                            nextViewController.sharedText = input ?? ""
+                          //  userDefaults.set("" as String, forKey: "incomingURL")
+                          //  userDefaults.synchronize()
+                            self.present(nextViewController, animated:true, completion:nil)
+                           
+                        }
+                    }
+                    
+                   
+//                    do {
+//                    let input  = UserDefaults.standard.object(forKey: "incomingURL") as! Data
+//                    decodedInput = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(input) as! String
+//                    } catch {
+//                        print("fail to decode")
+//                    }
+                   
+                   
+                    
+                    
                     let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
                     let nextViewController = storyBoard.instantiateViewController(withIdentifier: "spvc") as! SendPostViewController
                     nextViewController.modalPresentationStyle = .fullScreen
@@ -76,6 +109,7 @@ class ViewController: UIViewController {
                     nextViewController.bbuserid = ud_bbuserid!
                     nextViewController.bbpassword = ud_bbpassword!
                     nextViewController.username = ud_userName!
+                    
                     
                     self.present(nextViewController, animated:true, completion:nil)
                 
@@ -92,7 +126,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        
+      
         
     
     }

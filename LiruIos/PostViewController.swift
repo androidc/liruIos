@@ -20,6 +20,7 @@ class PostViewController: UIViewController{
     var bbusername=""
     var bbpassword = ""
     var jurl = ""
+    var sharedText: String=""
     
     var pickerData: [String] = [String]()
     
@@ -334,7 +335,16 @@ class PostViewController: UIViewController{
             return alert
         }
 
+    private func getUserFromUD() {
+        
+        var bbuserid = UserDefaults.standard.string(forKey: Keys.bbuserid)
+        var bbusername = UserDefaults.standard.string(forKey: Keys.bbusername)
+        var bbpassword = UserDefaults.standard.string(forKey: Keys.bbuserpassword)
+        var jurl = UserDefaults.standard.string(forKey: Keys.jurl)
+        
 
+        
+    }
     
 
     private func sendMicroPost(completion: @escaping (_ status:Int) -> ()) {
@@ -490,8 +500,43 @@ class PostViewController: UIViewController{
         let view = UIActivityIndicatorView(style: .large)
         return view
     }()
-        
     
+  
+        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+       // self.TextView.text += "Start of viewDidAppear"
+        
+        if let userDefaults = UserDefaults(suiteName: "group.liruios") {
+            sharedText =  userDefaults.string(forKey: "incomingURL") ?? ""
+            userDefaults.set("" as String, forKey: "incomingURL")
+            userDefaults.synchronize()
+        }
+        if sharedText.contains("https://yout") {
+            //                        String output = "[iflash=640,390,https://www.youtube.com/embed/" + url[url.length - 1] + "]";
+            let sharedTextSplitted = sharedText.components(separatedBy: "/")
+            let emdedId = sharedTextSplitted[sharedTextSplitted.count-1].dropLast()
+            sharedText = "[iflash=640,390,https://www.youtube.com/embed/\(emdedId)]"
+            self.TextView.text += sharedText
+            getUserFromUD()
+          //  self.TextView.text += "Add youtube link"
+        } else if sharedText.contains("https://coub")
+        {
+            let sharedTextSplitted = sharedText.components(separatedBy: "/")
+            let emdedId = sharedTextSplitted[sharedTextSplitted.count-1].dropLast()
+            sharedText = "[iflash=640,360,https://coub.com/embed/\(emdedId)?muted=false]"
+            self.TextView.text += sharedText
+            getUserFromUD()
+          //  self.TextView.text += "Add coub link"
+        }
+        else
+        {
+            self.TextView.text += sharedText
+            getUserFromUD()
+         //   self.TextView.text += "Add some text"
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -501,7 +546,20 @@ class PostViewController: UIViewController{
 //        print(bbusername)
 //        print(jurl)
 //
+       //                        String output = "[iflash=640,360,https://coub.com/embed/" +url[url.length - 1] + "?muted=false&autostart=false&originalSize=true]";
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(onResume), name:
+                UIApplication.willEnterForegroundNotification, object: nil)
 
+       // self.TextView.text += "Start of ViewDidLoad"
+        if let userDefaults = UserDefaults(suiteName: "group.liruios") {
+            sharedText =  userDefaults.string(forKey: "incomingURL") ?? ""
+            //userDefaults.set("" as String, forKey: "incomingURL")
+           // userDefaults.synchronize()
+        }
+        
+        
+        
         pickerData = ["как и весь дневник", "закрыт неавторизованным", "закрыт всем кроме друзей и ПЧ", "закрыт всем, кроме хозяина дневника","закрыт всем, кроме избранных"]
         
         
@@ -514,9 +572,42 @@ class PostViewController: UIViewController{
        
     }
     
-    
+    @objc func onResume() {
+       // self.TextView.text += "Start of onResume()"
+        
+        if let userDefaults = UserDefaults(suiteName: "group.liruios") {
+            sharedText =  userDefaults.string(forKey: "incomingURL") ?? ""
+            userDefaults.set("" as String, forKey: "incomingURL")
+            userDefaults.synchronize()
+        }
+        if sharedText.contains("https://yout") {
+            //                        String output = "[iflash=640,390,https://www.youtube.com/embed/" + url[url.length - 1] + "]";
+            let sharedTextSplitted = sharedText.components(separatedBy: "/")
+            let emdedId = sharedTextSplitted[sharedTextSplitted.count-1].dropLast()
+            sharedText = "[iflash=640,390,https://www.youtube.com/embed/\(emdedId)]"
+            self.TextView.text += sharedText
+            getUserFromUD()
+        //    self.TextView.text += "Add youtube link"
+        } else if sharedText.contains("https://coub")
+        {
+            let sharedTextSplitted = sharedText.components(separatedBy: "/")
+            let emdedId = sharedTextSplitted[sharedTextSplitted.count-1].dropLast()
+            sharedText = "[iflash=640,360,https://coub.com/embed/\(emdedId)?muted=false]"
+            self.TextView.text += sharedText
+            getUserFromUD()
+          //  self.TextView.text += "Add coub link"
+        }
+        else
+        {
+            self.TextView.text += sharedText
+            getUserFromUD()
+           // self.TextView.text += "Add some text"
+        }
+    }
     
 }
+
+
 
 extension PostViewController: ImagePickerDelegate {
   

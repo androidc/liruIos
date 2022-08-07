@@ -15,6 +15,7 @@ class SendPostViewController: UIViewController {
     var bbpassword = ""
     var jurl = ""
     var username=""
+
     
     
     
@@ -23,6 +24,7 @@ class SendPostViewController: UIViewController {
         // Do any additional setup after loading the view.
        // print("bbuserid:\(bbuserid)")
         uNameField.text = username
+        
        
     }
     

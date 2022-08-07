@@ -19,6 +19,9 @@
 		1B0CAFB327A1953D007CF2FD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B0CAFB227A1953D007CF2FD /* Assets.xcassets */; };
 		1B0CAFB627A1953D007CF2FD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B0CAFB427A1953D007CF2FD /* LaunchScreen.storyboard */; };
 		1B0CAFBE27A30394007CF2FD /* SendPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B0CAFBD27A30394007CF2FD /* SendPostViewController.swift */; };
+		1B34E7B82859D22800822E48 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B34E7B72859D22800822E48 /* ShareViewController.swift */; };
+		1B34E7BB2859D22800822E48 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B34E7B92859D22800822E48 /* MainInterface.storyboard */; };
+		1B34E7BF2859D22800822E48 /* LiruShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 1B34E7B52859D22700822E48 /* LiruShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		1BBAD75627BA75840058DF7D /* FriendsListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD75527BA75840058DF7D /* FriendsListController.swift */; };
 		1BBAD75827BA931C0058DF7D /* FriendsXMLModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD75727BA931C0058DF7D /* FriendsXMLModel.swift */; };
 		1BBAD75B27BC07880058DF7D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1BBAD75927BC07880058DF7D /* Model.xcdatamodeld */; };
@@ -38,6 +41,30 @@
 		1BFEC9BF27B17E43005C2FF5 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BFEC9BE27B17E42005C2FF5 /* Constants.swift */; };
 		21F9B4B05F2F11099F96BCB5 /* Pods_LiruIos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A928515DB829D5100F7BE1 /* Pods_LiruIos.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1B34E7BD2859D22800822E48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1B0CAF9E27A19538007CF2FD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B34E7B42859D22700822E48;
+			remoteInfo = LiruShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1B34E7C02859D22800822E48 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				1B34E7BF2859D22800822E48 /* LiruShareExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1B0243622815E9D9008E80BB /* CommentCellWithWebView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommentCellWithWebView.xib; sourceTree = "<group>"; };
@@ -59,6 +86,12 @@
 		1B0CAFB527A1953D007CF2FD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B0CAFB727A1953D007CF2FD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B0CAFBD27A30394007CF2FD /* SendPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPostViewController.swift; sourceTree = "<group>"; };
+		1B34E7B52859D22700822E48 /* LiruShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = LiruShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B34E7B72859D22800822E48 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		1B34E7BA2859D22800822E48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		1B34E7BC2859D22800822E48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B34E7C42859E30100822E48 /* LiruIos.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LiruIos.entitlements; sourceTree = "<group>"; };
+		1B34E7C52859E34400822E48 /* LiruShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LiruShareExtension.entitlements; sourceTree = "<group>"; };
 		1BBAD75527BA75840058DF7D /* FriendsListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsListController.swift; sourceTree = "<group>"; };
 		1BBAD75727BA931C0058DF7D /* FriendsXMLModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsXMLModel.swift; sourceTree = "<group>"; };
 		1BBAD75A27BC07880058DF7D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -90,6 +123,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1B34E7B22859D22700822E48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -97,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				1B0CAFA827A19538007CF2FD /* LiruIos */,
+				1B34E7B62859D22800822E48 /* LiruShareExtension */,
 				1B0CAFA727A19538007CF2FD /* Products */,
 				7A8AE7ABED97B262D0400F2C /* Pods */,
 				50167A1C515AF086909B374E /* Frameworks */,
@@ -107,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				1B0CAFA627A19538007CF2FD /* LiruIos.app */,
+				1B34E7B52859D22700822E48 /* LiruShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +156,7 @@
 		1B0CAFA827A19538007CF2FD /* LiruIos */ = {
 			isa = PBXGroup;
 			children = (
+				1B34E7C42859E30100822E48 /* LiruIos.entitlements */,
 				1BBAD77127CD1CB10058DF7D /* RssCell */,
 				1BBAD76E27CCF9E70058DF7D /* Utility */,
 				1BBAD76D27CCF9920058DF7D /* XMLModel */,
@@ -137,6 +180,17 @@
 				1B02436E281C139A008E80BB /* Localizable.strings */,
 			);
 			path = LiruIos;
+			sourceTree = "<group>";
+		};
+		1B34E7B62859D22800822E48 /* LiruShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				1B34E7C52859E34400822E48 /* LiruShareExtension.entitlements */,
+				1B34E7B72859D22800822E48 /* ShareViewController.swift */,
+				1B34E7B92859D22800822E48 /* MainInterface.storyboard */,
+				1B34E7BC2859D22800822E48 /* Info.plist */,
+			);
+			path = LiruShareExtension;
 			sourceTree = "<group>";
 		};
 		1BBAD76C27CCF97C0058DF7D /* CoreDataModels */ = {
@@ -209,15 +263,34 @@
 				1B0CAFA327A19538007CF2FD /* Frameworks */,
 				1B0CAFA427A19538007CF2FD /* Resources */,
 				E5C690A5700ED628E73E4F86 /* [CP] Embed Pods Frameworks */,
+				1B34E7C02859D22800822E48 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				1B34E7BE2859D22800822E48 /* PBXTargetDependency */,
 			);
 			name = LiruIos;
 			productName = LiruIos;
 			productReference = 1B0CAFA627A19538007CF2FD /* LiruIos.app */;
 			productType = "com.apple.product-type.application";
+		};
+		1B34E7B42859D22700822E48 /* LiruShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1B34E7C32859D22800822E48 /* Build configuration list for PBXNativeTarget "LiruShareExtension" */;
+			buildPhases = (
+				1B34E7B12859D22700822E48 /* Sources */,
+				1B34E7B22859D22700822E48 /* Frameworks */,
+				1B34E7B32859D22700822E48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LiruShareExtension;
+			productName = LiruShareExtension;
+			productReference = 1B34E7B52859D22700822E48 /* LiruShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -230,6 +303,9 @@
 				LastUpgradeCheck = 1310;
 				TargetAttributes = {
 					1B0CAFA527A19538007CF2FD = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					1B34E7B42859D22700822E48 = {
 						CreatedOnToolsVersion = 13.1;
 					};
 				};
@@ -249,6 +325,7 @@
 			projectRoot = "";
 			targets = (
 				1B0CAFA527A19538007CF2FD /* LiruIos */,
+				1B34E7B42859D22700822E48 /* LiruShareExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -265,6 +342,14 @@
 				1B0CAFB327A1953D007CF2FD /* Assets.xcassets in Resources */,
 				1B0CAFB127A19538007CF2FD /* Main.storyboard in Resources */,
 				1B0243632815E9D9008E80BB /* CommentCellWithWebView.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1B34E7B32859D22700822E48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B34E7BB2859D22800822E48 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,7 +427,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1B34E7B12859D22700822E48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B34E7B82859D22800822E48 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1B34E7BE2859D22800822E48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1B34E7B42859D22700822E48 /* LiruShareExtension */;
+			targetProxy = 1B34E7BD2859D22800822E48 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		1B02436E281C139A008E80BB /* Localizable.strings */ = {
@@ -380,6 +481,14 @@
 				1B024369281C1306008E80BB /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1B34E7B92859D22800822E48 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1B34E7BA2859D22800822E48 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -507,10 +616,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5FED4D443EA5290655ACF078 /* Pods-LiruIos.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LiruIos/LiruIos.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6PFYL3M3A5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiruIos/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -535,10 +647,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E281FD087C203EBE2C7DD10B /* Pods-LiruIos.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = LiruIos/LiruIos.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6PFYL3M3A5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LiruIos/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -553,6 +668,57 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.chizztectep.ru.LiruIos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1B34E7C12859D22800822E48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LiruShareExtension/LiruShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6PFYL3M3A5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LiruShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LiruShareExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chizztectep.ru.LiruIos.LiruShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1B34E7C22859D22800822E48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = LiruShareExtension/LiruShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = LiruShareExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = LiruShareExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chizztectep.ru.LiruIos.LiruShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -576,6 +742,15 @@
 			buildConfigurations = (
 				1B0CAFBB27A1953D007CF2FD /* Debug */,
 				1B0CAFBC27A1953D007CF2FD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1B34E7C32859D22800822E48 /* Build configuration list for PBXNativeTarget "LiruShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1B34E7C12859D22800822E48 /* Debug */,
+				1B34E7C22859D22800822E48 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
